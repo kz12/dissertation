@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {1}Introduction}{6}
+\contentsline {section}{\numberline {1.1}Contributions}{6}
+\contentsline {section}{\numberline {1.2}Structure of this Report}{7}
+\contentsline {chapter}{\numberline {2}OneZoom Software Structure}{8}
+\contentsline {chapter}{\numberline {3}Code Refactoring}{9}
+\contentsline {chapter}{\numberline {4}Performance Issue}{10}
+\contentsline {section}{\numberline {4.1}Loading Time}{10}
+\contentsline {section}{\numberline {4.2}User Interaction}{11}
+\contentsline {chapter}{\numberline {5}Memory Issue}{13}
+\contentsline {chapter}{\numberline {6}Functionality}{14}
+\contentsline {chapter}{Bibliography}{15}
