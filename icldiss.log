@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  13 AUG 2013 14:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 AUG 2013 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -533,7 +533,42 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 \arrowsize=\dimen156
+)) (/usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count112
+\float@exts=\toks27
+\float@box=\box56
+\@float@everytoks=\toks28
+\@floatcapt=\box57
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count113
+\lst@gtempboxa=\box58
+\lst@token=\toks29
+\lst@length=\count114
+\lst@currlwidth=\dimen157
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen158
+\lst@width=\dimen159
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen160
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box59
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
 
 LaTeX Warning: Unused global option(s):
     [paper=a4,pagesize=auto].
@@ -541,18 +576,18 @@ LaTeX Warning: Unused global option(s):
 (./icldiss.aux)
 \openout1 = `icldiss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -591,17 +626,17 @@ LaTeX Font Info:    ... okay on input line 52.
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen157
-\scratchbox=\box56
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen158
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count121
+\scratchdimen=\dimen161
+\scratchbox=\box60
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen162
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -646,10 +681,11 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@lstlisting=\count127
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 54.
+(Font)              <14.4> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 78.
 
 [1
 
@@ -666,6 +702,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 2.
+
+Overfull \hbox (5.9177pt too wide) in paragraph at lines 15--15
+ [][] []\OT1/cmr/m/n/10.95 Using thread and mes-sage queue to dis-card ex-tra m
+ouse 
+ []
+
 )
 \tf@toc=\write4
 \openout4 = `icldiss.toc'.
@@ -688,49 +730,113 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+
+Overfull \hbox (56.4701pt too wide) in paragraph at lines 109--110
+\OT1/cmr/m/n/10.95 users could nav-i-gate be-tween dif-fer-ent scales by sim-pl
+y zoom(http://www.onezoom.org).
+ []
+
 [6
 
-] [7]
+] [7] [8]
 Chapter 2.
-[8
+<Mammal.png, id=35, 883.3pt x 660.4675pt>
+File: Mammal.png Graphic file (type png)
+ <use Mammal.png>
+Package pdftex.def Info: Mammal.png used on input line 143.
+(pdftex.def)             Requested size: 426.7961pt x 250.38565pt.
 
-]
-Chapter 3.
+Overfull \hbox (68.29112pt too wide) in paragraph at lines 143--144
+ [][] 
+ []
+
 [9
 
-]
-Chapter 4.
-[10
+] <Rodent.png, id=39, 955.57pt x 642.4pt>
+File: Rodent.png Graphic file (type png)
+ <use Rodent.png>
+Package pdftex.def Info: Rodent.png used on input line 150.
+(pdftex.def)             Requested size: 426.78017pt x 250.37816pt.
 
-] [11] [12]
+Overfull \hbox (68.27519pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+<MouseLikeRodent.png, id=40, 894.34125pt x 588.1975pt>
+File: MouseLikeRodent.png Graphic file (type png)
+
+<use MouseLikeRodent.png>
+Package pdftex.def Info: MouseLikeRodent.png used on input line 157.
+(pdftex.def)             Requested size: 426.79526pt x 227.61902pt.
+
+Overfull \hbox (68.29028pt too wide) in paragraph at lines 157--158
+ [][] 
+ []
+
+[10 <./Mammal.png> <./Rodent.png>] [11 <./MouseLikeRodent.png>]
+Overfull \hbox (49.77475pt too wide) in paragraph at lines 185--186
+[][] 
+ []
+
+[12] [13]
+Chapter 3.
+[14
+
+] [15]
+Chapter 4.
+[16
+
+] [17]
+Overfull \hbox (72.5868pt too wide) in paragraph at lines 295--296
+[][] 
+ []
+
+[18]
+Overfull \hbox (64.6791pt too wide) in paragraph at lines 325--326
+[][] 
+ []
+
+[19] [20]
+Overfull \hbox (47.11775pt too wide) in paragraph at lines 342--343
+[][] 
+ []
+
+[21]
 Chapter 5.
-[13
+[22
 
 ]
 Chapter 6.
-[14
+[23
 
-] [15
+] [24
 
 ] (./icldiss.aux) ) 
 Here is how much of TeX's memory you used:
- 13651 strings out of 493488
- 277818 string characters out of 3141326
- 378616 words of memory out of 3000000
- 16678 multiletter control sequences out of 15000+200000
- 8680 words of font info for 31 fonts, out of 3000000 for 9000
+ 15565 strings out of 493488
+ 303529 string characters out of 3141326
+ 433179 words of memory out of 3000000
+ 18568 multiletter control sequences out of 15000+200000
+ 9155 words of font info for 33 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 65i,7n,71p,1228b,575s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,8n,71p,1443b,1163s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt10.pfb>
-Output written on icldiss.pdf (15 pages, 91896 bytes).
+Output written on icldiss.pdf (24 pages, 1938577 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
