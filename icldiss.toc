@@ -16,14 +16,14 @@
 \contentsline {section}{\numberline {4.2}Overview of the solution}{21}
 \contentsline {section}{\numberline {4.3}Create new data}{24}
 \contentsline {section}{\numberline {4.4}Dynamic adding and deleting nodes}{26}
-\contentsline {chapter}{\numberline {5}Performance Issue}{30}
-\contentsline {section}{\numberline {5.1}Loading Time}{30}
-\contentsline {section}{\numberline {5.2}User Interaction}{31}
-\contentsline {subsection}{\numberline {5.2.1}Using thread and message queue to discard extra mouse move message}{32}
-\contentsline {subsection}{\numberline {5.2.2}Using idle thread to prepare nodes}{33}
-\contentsline {subsection}{\numberline {5.2.3}Using cached bitmap to update view before calculation is done}{34}
-\contentsline {subsection}{\numberline {5.2.4}Test use bitmap or do actual drawing}{35}
-\contentsline {subsection}{\numberline {5.2.5}Avoid duplicate drawing nodes}{37}
-\contentsline {subsection}{\numberline {5.2.6}Draw less detail first}{38}
-\contentsline {chapter}{\numberline {6}Functionality}{39}
-\contentsline {chapter}{Bibliography}{40}
+\contentsline {chapter}{\numberline {5}Performance Issue}{31}
+\contentsline {section}{\numberline {5.1}Loading Time}{31}
+\contentsline {section}{\numberline {5.2}User Interaction}{32}
+\contentsline {subsection}{\numberline {5.2.1}Using thread and message queue to discard extra mouse move message}{33}
+\contentsline {subsection}{\numberline {5.2.2}Using idle thread to prepare nodes}{34}
+\contentsline {subsection}{\numberline {5.2.3}Using cached bitmap to update view before calculation is done}{35}
+\contentsline {subsection}{\numberline {5.2.4}Test use bitmap or do actual drawing}{36}
+\contentsline {subsection}{\numberline {5.2.5}Avoid duplicate drawing nodes}{38}
+\contentsline {subsection}{\numberline {5.2.6}Draw less detail first}{39}
+\contentsline {chapter}{\numberline {6}Functionality}{40}
+\contentsline {chapter}{Bibliography}{41}

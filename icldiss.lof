@@ -10,11 +10,12 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Bounding box of child1 and child2 of root\relax }}{24}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Database columns\relax }}{25}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Work flow of adding nodes on the tree\relax }}{27}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Possibility with distance\relax }}{28}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Possibility with distance\relax }}{29}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Possibility with size\relax }}{29}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Work flow of deleting nodes on the tree\relax }}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Previous working flow of main UI thread\relax }}{32}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces How recalculation thread deals with message\relax }}{33}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces How to update view\relax }}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces How to test whether use bitmap to redraw\relax }}{37}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Previous working flow of main UI thread\relax }}{33}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces How recalculation thread deals with message\relax }}{34}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces How to update view\relax }}{36}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces How to test whether use bitmap to redraw\relax }}{38}
 \addvspace {10\p@ }

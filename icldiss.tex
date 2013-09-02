@@ -142,13 +142,13 @@ Chapter 6 goes through other functionalities that the application has implemente
 
 \chapter{OneZoom Website Software Introduction}
 
-This chapter gives a brief introduction to the OneZoom website software, on which the whole project has been built. It talks about how the raw data is organized and the member variables of the node object built based on the raw data. Then it explains the criteria for selecting elements to be drawn. These two sections is highly related to the memory issue that will be discussed later. Then an introduction to the software working flow would be given. It is highly related to the performance issue in Chapter 5. Lastly, it would talk about how to use the software from a user perspective.
+This chapter gives a brief introduction to the OneZoom website software, on which the whole project has been built. It manifests how the raw data is organized and how the member variables of the node object built based on the raw data. Then it explains the criteria for selecting elements to be drawn. These two sections are highly related to the memory issue that will be discussed later. Then an introduction to the software working flow would be given, which is highly related to the performance issue in Chapter 5. Lastly, the author will illustrate how to use the software from a user's perspective.
 
 \section{Data Processing}
 
 \subsection{Raw data format}
 
-The raw data is a string which is in Newick format. In Newick format there are nodes, branch lengths and brackets. For instance, if two species A and B have a common ancestor node C 1.5 million years ago the Newick string looks like this: 
+The raw data is a string in Newick format. In Newick format there are nodes, branch lengths and brackets. For instance, if two species A and B have a common ancestor node C 1.5 million years ago the Newick string looks like this: 
 \begin{center}
 	(A:1.5, B:1.5)C. 
 \end{center}
@@ -157,27 +157,27 @@ Then if species D and species C have a common ancestor E 1 million years ago, th
 \begin{center}
 	((A:1.5,B:1.5)C:1,D:1)E. 
 \end{center}
-If these group of species have a further ancestor, then this string would be took as a whole and replace A in the first expression to form a larger Newick string. By recursive doing this, a string of all the biological data could be built. 
+If these group of species have a further ancestor, then this string will be regarded as a whole and replace A in the first expression to form a larger Newick string. By recursive doing this, a string of all the biological data can be built. 
 
-Building a tree from the string is just the opposite as building the tree. For instance, given the second string, the node E out of the brackets would be first taken out. Then the remainder of the string would be split to two children.
+Building a tree from the string is just the opposite as building the tree. For instance, given the second string, the node E out of the brackets would be first taken out. Then the remainder of the string will be split to two children.
 
 \begin{center}
 	"((A:1.5,B:1.5)C:2,D:3.5)E" =  "(" + "(A:1.5,B:1.5)C:2" + "," + "D:3.5" + ")" + "E"
 \end{center}
 
-Therefore, a node object E with two children would be built. Its first children need to be further initialised while its second children would be node D. For a larger dataset, building a tree follows the same steps. First creates the node out of the outer bracket, then split the data inside the bracket into two parts and set each part being one of the children of the outer node. Then continue initialising its children by the same steps.
+Therefore, a node object E with two children will be built. Its first children need to be further initialised while its second children will be node D. For a larger dataset, building a tree follows the same steps. First create the node out of the outer bracket, then split the data inside the bracket into two parts and set each part to be one of the children of the outer node. Then continue initialising its children by the same steps.
 
 Finally, for any Newick string, a binary tree starting from a root would be built. 
 
 \subsection{Node object}
 
-Basically, the nodes in a Newick string could be categorized into two types, link node(node with children) and leaf node(node without children).
+Basically, the nodes in a Newick string can be categorized into two types, link node(node with children) and leaf node(node without children).
 
-For each leaf node in the Newick string, it contains a species name and the megadata e.g. a node named: Tachyglossus\_ aculeatus\{Short-beaked Echidna\_ LC\_ S\} means that it's the animal 'Tachyglossus aculeatus' (latin name) with common name Short-beaked Echidna and redlist status LC(which means least consern) and population stability S(which means stable). While for the link nodes, it does not contain information of its redlist status and its population stability in the raw data. These two information in the link nodes are statistic of the redlist status and population stability of all of their children. 
+For each leaf node in the Newick string, it contains a species name and the megadata e.g. a node named: Tachyglossus\_ aculeatus\{Short-beaked Echidna\_ LC\_ S\} means that it's the animal 'Tachyglossus aculeatus' (latin name) with common name Short-beaked Echidna and redlist status LC(which means least consern) and population stability S(which means stable). While for the link nodes, it does not contain information of its redlist status and its population stability in the raw data. These two pieces of information in the link nodes are statistic of the redlist status and population stability of all of their children. 
 
 Besides redlist and population stability, the richness of link nodes are also statistic of their children, while the richness of a leaf node is always 1. 
 
-Another megadata that cannot be accessed directly from the raw data is the age of link nodes. The age of the root need to be inferred from its children. Take the previous string as an example, the node hierarchy can be represented as below. The age of node C is 1.5 million years from either child A or B. While the age of node E is 3.5 million years from child C or D.
+Another megadata that cannot be accessed directly from the raw data is the age of link nodes. The age of the root needs to be inferred from its children. Take the previous string as an example, the node hierarchy can be represented as below. The age of node C is 1.5 million years from either child A or B. While the age of node E is 3.5 million years from child C or D.
 
 \begin{center}
 \begin{tikzpicture}
@@ -197,16 +197,16 @@ Another megadata that cannot be accessed directly from the raw data is the age o
 \end{tikzpicture}
 \end{center}
 
-The data talked above are information about a species, e.g. the name of a species, the richness of a species. Except these information, node objects also contain information about drawing an element. More specifically, these information can be divided to two parts. The first part tells the software where to draw the elements like bezier start, control and end points and how big should the elements be drawn like ithe branch line width, circle radius. The second part tells the software the bounding box of a node. Each node has two kind of bounding box, a bigger one representing a bounding box of itself and all of its children and a smaller one representing a bounding box of the node itself. 
+The data talked above is information about a species, e.g. the name of a species, the richness of a species. Except the information, node objects also contain information about drawing an element. More specifically, these information can be divided into two parts. The first part tells the software where to draw the elements like bezier start, control and end points and how big should the elements be drawn like the branch line width, circle radius. The second part tells the software the bounding box of a node. Each node has two kinds of bounding box, a bigger one representing a bounding box of itself and all of its children and a smaller one representing a bounding box of the node itself. 
 
 
 \section{Ways to decrease the amount of elements being drawn}
 
-For a tree big enough, not all of the nodes would be drawn at any given time. There are two criteria for selecting elements to be drawn. The first is to compare the size of a node with a threshold. When the size of a node is smaller than the threshold, then the node should not be drawn, so does all of its children. There are also some other thresholds. Both leaf nodes and link nodes could show text. The text could appear or disappear, displaying in greater details or in less details. All these are controlled by the relative threshold and the size of these nodes. The second criteria is to test whether the bounding box of a node is within the screen. Here we use the bounding box containing only the node itself. If the node is in the bounding box, then it should be drawn, otherwise it should not be drawn. 
+For a tree big enough, not all of the nodes would be drawn at any given time. There are two criteria for selecting elements to be drawn. The first is to compare the size of a node with a threshold. When the size of a node is smaller than the threshold, then the node should not be drawn as well as all of its children. There are also some other thresholds. Both leaf nodes and link nodes could show text. The text can appear or disappear, displaying in greater details or in fewer details. All these are controlled by the relative threshold and the size of these nodes. The second criteria is to test whether the bounding box of a node is within the screen. Here we use the bounding box containing only the node itself. If the node is in the bounding box, then it should be drawn, otherwise it should not. 
 
 \section{Software Working Flow}
 
-The software first draws a loading page since it might take some time for the full tree being loaded and the loading page tells users that the software is still responding. The loading time increases linearly with the size of the species, which could become unacceptable for larger trees. A reasonable solution for shortening loading time can be found in chapter 4: Performance Issues. 
+The software first draws a loading page since it might take some time for the full tree being loaded and the loading page tells users that the software is still responding. The loading time increases linearly with the size of the species, which may become unacceptable for larger trees. A reasonable solution for shortening loading time can be found in chapter 4: Performance Issues. 
 
 After drawing the loading page, the software starts creating objects representing tree nodes from data. This is followed by initializing some node information, like the age of some nodes, which cannot be got directly from data but has to be calculated from their children nodes. Then pre calculation is called to calculate the Bezier curve parameter of each node such that the relative position of each node is known. 
 
@@ -302,7 +302,7 @@ The application now supports three kinds of user interaction: using one finger t
 
 Memory is an important factor that needs to be considered under the circumstances of a quite large dataset and relatively resources restricted android development environment. 
 
-As the dataset grows greater, the amount of memory needed for creating nodes also increases. By using chrome developer tools,  a snapshot of the heap memory usage could be get. For the mammals tree which has 5020 species, there are 6.0 megabytes allocated in heap for creating these nodes. 12.2 megabytes and 29.1 megabytes are allocated for birds tree which has 9993 species and for tetrapods tree which has 22822 species respectively. The maximum dataset which representing all species contains about 2 million species. To build such a tree, the chrome browser need to allocate approximate 2.4 gigabytes to 2.6 gigabytes, which is apparently not acceptable in most modern personal computers. The maximum amount of memory available for an android application is more limited than for a website software. More specifically, for each application running on Sumsang Galaxy S3, the maximum amount of memory available is 256 megabytes. This means the largest tree that could be built theoretically in the device has about 213,000 species, which is about one tenth the size of the full biology tree. 
+As the dataset grows greater, the amount of memory needed for creating nodes also increases. By using chrome developer tools,  a snapshot of the heap memory usage can be obtained. For the mammals tree which has 5,020 species, there are 6.0 megabytes allocated in heap for creating these nodes. 12.2 megabytes and 29.1 megabytes are allocated for birds tree which has 9,993 species and for tetrapods tree which has 22,822 species respectively. The maximum dataset which represents all species contains about 2 million species. To build such a tree, the chrome browser needs to allocate approximate 2.4 gigabytes to 2.6 gigabytes, which is apparently not acceptable in most modern personal computers. The maximum amount of memory available for an android application is more limited than for a website software. More specifically, for each application running on Sumsang Galaxy S3, the maximum amount of memory available is 256 megabytes. This means the largest tree that can be built theoretically in the device has about 213,000 species, which is about one tenth the size of the whole biology tree. 
 
 \begin{table} [H]
 	\centering % used for centering table
@@ -325,7 +325,7 @@ As the dataset grows greater, the amount of memory needed for creating nodes als
 \end{table}
 
 
-Not only heap memory but also stack memory will increase as the number of species grows. When initialization begins, the website software creates the tree from the root. Then it recursively creates its children if it is not a leaf node. The parameters passed down to create its children are the dataset of the children, which is a string containing all megadata of its direct children and all further children. Therefore, for a leaf node which has a depth of n, its megadata would be copied in stack for n times during initialization. The greater amount of species a tree contains, the deeper its average depth will be. For the most balanced binary tree which contains N species, the average depth K of the tree should be:
+Not only heap memory but also stack memory will increase as the number of species grows. When initialization begins, the website software creates the tree from the root. Then it recursively creates its children if the node is not a leaf node. The parameters which passed down to create its children are the dataset of the children, which is a string containing all megadata of its direct children and all further children. Therefore, for a leaf node which has a depth of n, its megadata will be copied in stack for n times during initialization. The greater amount of species a tree contains, the deeper its average depth will be. For the most balanced binary tree which contains N species, the average depth K of the tree should be:
 
 \begin{equation*}
 log_2 N + 1 < K < log_2 N + 2
@@ -337,11 +337,13 @@ In the worst case, where the binary tree is totally unbalanced, the average dept
 	K = N/2
 \end{equation*}
 
-Take the largest tree released on the website tetrapods as an example. The data size of the tree is 1.5 megabytes. In the best case when the tree is well balanced, the average depth of the tree is about 16. Thus each megadata representing one species would be pushed into the stack for averaging 16 times. Therefore, the stack memory is expected to increase for at least 24 megabytes.
+Take the largest tree released on the website tetrapods as an example. The data size of the tree is 1.5 megabytes. In the best case when the tree is well balanced, the average depth of the tree is about 16. Thus each megadata representing one species will be pushed into stack for 16 times in average. Therefore, the stack memory is expected to increase by at least 24 megabytes.
 
- The largest dataset that currently could be obtained is the bacteria tree. The data size of the tree is about 11 megabytes, while the total species of the tree is 408135. Hence in the best case, the average depth of the tree would be 20. This multiply the size of the dataset is the memory that would be allocated during initialization: 220 megabytes. The bacteria tree currently could not be loaded using chrome because maximum call stack size exceeds. 
+ The largest dataset that can currently be obtained is the bacteria tree. The data size of the tree is about 11 megabytes, while the total species of the tree is 408,135. Hence in the best case, the average depth of the tree will be 20. This multiplying the size of the dataset is the memory that will be allocated during initialization: 220 megabytes. The bacteria tree currently could not be loaded using chrome because running the software will exceed its maximum stack space. 
  
  Below are two tables gives comparison of total memory usage between different browsers and total memory usage right after initialization and a long time after initialization.
+ 
+ Table 4.2 gives comparison of total memory usage between different browsers. Table 4.3 compares the memory usage right after initialization and a long time after initialization of different trees using Chrome.
  
  \begin{table} [H]
 	\centering % used for centering table
@@ -385,9 +387,9 @@ Take the largest tree released on the website tetrapods as an example. The data 
 
 \section{Overview of the solution}
 
-The solution of the issue is to dynamically add and delete nodes. As mentioned in the introduction of the software, only when a node is inside the display area and when the size of the node is big enough to be seen, the node will be drawn. The approach this application takes is to select the elements whose larger bounding box(the bounding box containing the node itself and all of its children) are inside the screen and the size of the node is greater than the visible threshold. Therefore, only parts of the tree will be built. Then when the user interacts with the view, the application will allocate memory to the nodes that should be built and deallocate memory from the nodes that are not visible.
+The solution of the issue is to dynamically add and delete nodes. As mentioned in the introduction of the software, only when a node is inside the display area and when the size of the node is big enough to be seen, the node will be drawn. The approach this application takes is to select the nodes whose larger bounding box(containing the node itself and all of its children) is inside the screen and the size of the which is greater than the visible threshold. Therefore, only parts of the tree will be built. Then when the user interacts with the view, the application will allocate memory to the nodes that should be built and deallocate memory from the nodes that are not visible.
 
-When the application starts or when the user interacts with view, the application begins to test what elements should be drawn. It starts from creating the root node. Then it test whether the root node should be drawn based on two criteria: whether its larger bounding box is inside the screen and whether its size is greater than the drawing threshold. If it satisfy the conditions, then continuing build both of its children and test their children using the same criteria. The nodes that satisfy the criteria will recursively create its children and test them until their children does not satisfy the test condition or they don't have further children. 
+When the application starts or when the user interacts with view, the application begins to test what nodes should be drawn. It starts from creating the root node. Then it tests whether the root node should be drawn based on two criteria: whether its larger bounding box is inside the screen and whether its size is greater than the drawing threshold. If the node satisfy the conditions, then its children should be built and tested using the same criteria. The nodes that satisfy the criteria will recursively create its children and test them until their children does not satisfy the test conditions or they don't have further children. 
 
 \begin{figure} [H]
 \begin{tikzpicture}[node distance = 5.5cm, auto]
@@ -410,7 +412,7 @@ When the application starts or when the user interacts with view, the applicatio
 \caption{Work flow of building part of the tree}
 \end{figure}
 
-Suppose the screen area is the yellow box in the picture below. The blue box is the larger bounding box of the root. It represents the boundary of the root node and of all of its children. Apparently, the root node is inside the screen and its size is big enough to be displayed. Therefore continue to create both children node and test them. 
+Suppose the screen area is the yellow box in the picture below. The blue box is the larger bounding box of the root. It represents the boundary of the root node and of all of its children. Apparently, the root node is inside the screen and its size is big enough to be displayed. Therefore both children nodes should be created and tested continuously.
 
 \begin{figure}[H]
   \centering
@@ -419,7 +421,7 @@ Suppose the screen area is the yellow box in the picture below. The blue box is 
   \label{fig:mammal}
 \end{figure}
 
-In the second picture, the bounding box of child1(blue box) is out of the screen, while that of child2(red box) is still in the screen(Here it is assumed that all children on the left hand side are child1). Therefore, the application would continue to build the children of child2 and test them. While the children of child1 will not be further checked. 
+In Figure 4.2, the bounding box of child1(blue box) is out of the screen, while that of child2(red box) is still in the screen(Here it is assumed that all children on the left hand side are child1). Therefore, the application will continue to build the children of child2 and test them. In contrast, the children of child1 will not be further checked. 
 
 \begin{figure}[H]
   \centering
@@ -428,13 +430,13 @@ In the second picture, the bounding box of child1(blue box) is out of the screen
   \label{fig:mammal}
 \end{figure}
 
-Further building will continue until it reaches the leaf node or the node is out of the screen or the node is too small to be displayed.
+Further building will be continued until reaching the leaf node or the node is out of the screen or the node is too small to be displayed.
 
 
 
 \section{Create new data}
 
-Since only part of the tree would be built, the information of the nodes that relies on its children, like richness, age, could not be calculated using the raw data. Hence, new dataset need to be created containing those information. For example, the dataset discussed in Chapter 2: 
+Since only part of the tree would be built, the information of the nodes that relies on its children, like richness, age, could not be calculated by using the raw data. Hence, a new dataset containing this information need to be built. For example, the dataset discussed in Chapter 2: 
 
 \begin{center}
 	((A:1.5,B:1.5)C:1,D:1)E
@@ -448,9 +450,9 @@ should be changed as:
 
 Inside the square bracket, the first number represents the richness of a node and the second number represents the age of a node.
 
-Except for the richness and age, the calculation of outer bounding box also relies on its children. Therefore, the bounding box is also expected to be appended in the raw data. However, in order to avoid the raw data becomes too long and too complex, a database is created to record those information. It also contains other information like the ratio of a node, the x position and y position relative to the root of the tree. Those data is used to test whether the node should be drawn. 
+Except for the richness and age, the calculation of outer bounding box also relies on its children. Therefore, the bounding box is also expected to be appended in the raw data. However, in order to avoid the raw data of becoming too long and too complex, a database is created to record those information. It also contains other information like the ratio of a node, the x position and y position relative to the root of the tree. Such data is used to test whether the node should be drawn. 
 
-The database also includes the id of both children. When the node pass the test, then it could build and test its children according to their id. In order to build a node, we need to access data of that node. Instead of storing the whole data string into the database, the application records the start and end position of the node in the data string. What's more, as the data for the children could also be accessed by referring the start and end position in the database, the application don't need to pass down the whole data string as parameters. Instead, the application create new nodes by passing down the children id. Therefore, each substring representing a node in the raw data would be created only once, which greatly reduce the use of stack memory. 
+The database also includes the id of both children. When the node pass the test, then it can build and test its children according to their id. In order to build a node, data of it need to be accessed. Instead of storing the whole data string into the database, the application records the start and end position of the node in the data string. What's more, as the data for the children can also be accessed by referring to the start and the end position in the database, the application does not need to pass down the whole data string as parameters. Instead, the application creates new nodes by passing down the children id. Therefore, each substring which represents a node in the raw data will be created only once, which greatly reduce the use of stack memory. 
 
 \begin{figure}[H]
   \centering
@@ -515,6 +517,10 @@ The first step of deleting is to test the possibility of the nodes in the runnin
 
 \begin{center}
 $Possibility = Integer.Maximum - P(d) - P(s) (d \textgreater 0, s\textless T)$
+
+$P(d) = 0.6*x^2 - 0.1*x$
+
+$P(s) = 0.6*x^2 - 1.1*x + 0.5$
 \end{center}
 
 \begin{figure}[H]
@@ -543,6 +549,26 @@ $Possibility = Integer.Maximum - P(d) - P(s) (d \textgreater 0, s\textless T)$
         \caption{Possibility with size}\label{fig:animals}
 \end{figure}
 
+After calculating the possibility of nodes in running list, the running list will be sorted according to the nodes possibility. Then remove the first node as well as all of its children from the running list and free the memory of these nodes. Then continue to remove the node from the beginning of the running list until free memory is enough.
+
+\begin{figure} [H]
+\begin{tikzpicture}[node distance = 5.5cm, auto]
+    % Place nodes
+    \node [block] (recalculation) {Recalculation};
+    \node [decision, right of=recalculation, node distance = 5.5cm] (space) {$memory < 10 Mb$};
+    \node [block, below of=space, node distance = 2.7cm] (poss) {Calculate Possibility};
+    \node [block, below of=poss, node distance = 2.7cm] (sort) {Sort running list};
+    \node [block, right of=sort, node distance = 5.5cm] (remove) {Remove 1st node \& its children from running list};    
+    %Draw edges
+    \path [line] (recalculation) -- (space);
+    \path [line] (space) -- node[red]{No}(poss);
+    \path [line] (poss) -- (sort);
+    \path [line] (sort) -- (remove);
+    \path [line] (remove) |- (space);
+
+\end{tikzpicture}
+\caption{Work flow of deleting nodes on the tree}
+\end{figure}
 
 
 \chapter{Performance Issue}
