@@ -1,8 +1,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Tree of Mammal\relax }}{15}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tree of Rodent: Zoom In the Rodent Branch\relax }}{16}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Zoom In the Mouse Like Rodents Branch\relax }}{16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Tree of Mammals\relax }}{15}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Tree of Rodents: Zoom In to the Rodent Branch\relax }}{16}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Zoom In the to Mouse Like Rodents Branch\relax }}{16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Work flow of building part of the tree\relax }}{22}
@@ -16,6 +16,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Previous working flow of main UI thread\relax }}{33}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces How recalculation thread deals with message\relax }}{34}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces How to update view\relax }}{36}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces How to test whether use bitmap to redraw\relax }}{38}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Calculation during idle time\relax }}{35}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces How to update view\relax }}{37}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces How to test whether toWhen the amount of species on the tree When the amount of species on the tree use bitmap to redraw\relax }}{39}
 \addvspace {10\p@ }
