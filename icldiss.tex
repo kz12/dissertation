@@ -61,7 +61,7 @@
   tabsize=3
 }
 
-\title{Tree of life visualization \\ By}
+\title{Tree of Life Visualization \\ By}
 \author{Kai Zhong(kz12)}
 
 
@@ -96,7 +96,7 @@
 The storage, searching and visualisation of big data has become an increasingly important issue in computer science. One technique for visualisation of huge hierarchies is the interactive fractal inspired graph(IFIG), which employs fractal geometry to place limitless amounts of information on a single page and show,or  hide information by the simple actions of zooming and panning. This method has been employed for tree of life visualisation where it solved a significant outstanding problem in evolutionary biology: how can large evolutionary trees be visualised effectively for science, education and public outreach.
 
 While the pre-existing software runs on javascript and html5, the object of this project is to develop an android application based on this code. Compared with a personal computer, the calculation ability of a mobile device is relatively low and the RAM capability is more restricted. The project develops a multi threaded method with cached bitmaps to solve the performance issue. This greatly shortens the loading time as well as the response time of user interaction. When dealing with larger trees, because of the limitation of RAM, dynamical loading and freeing of objects is employed in this project, such that the usage of RAM could be maintained under the limitation of an android application. 
-The techniques developed in this project could also be employed to solve performance issues in the website software
+The techniques developed in this project could also be employed to solve performance issues in the website software.
 
 \end{abstract}
 
@@ -104,7 +104,7 @@ The techniques developed in this project could also be employed to solve perform
 
 I would like to thank my supervisor Professor Duncan Gillies for the supports, valuable comments and guidance he provided me throughout my project period.
 
-I also wish to thank Dr.James Rosindell for sharing me the manuscript of the website software as well as providing important advices and comments for the application.
+I also wish to thank Dr.James Rosindell for sharing me the manuscript of the website software as well as providing important advices and comments for this project.
 
 
 \makededication
@@ -117,11 +117,11 @@ I also wish to thank Dr.James Rosindell for sharing me the manuscript of the web
 
 \section{Background}
 
-\subsection{What is tree of life?}
-The tree of life, a 200-year-old concept,  is a metaphor used to describe the relationships between both living and extinct organisms. One of its influential application was made by Charles Darwin. He employed the concept to describe the process of how different varieties and species envovled  from common ancestors. Ernst Haeckel went further by proposing phylogenic histories of life to illustrate relationships of species over time. The tree of life is now called the phylogenetic tree or evolutionary tree in this sense. ~\cite{treeOfLifeDefine} ~\cite{phylogeneticTree}
+\subsection{What is tree of life}
+The tree of life, a 200-year-old concept,  is a metaphor used to describe the relationships between both living and extinct organisms. One of its influential application was made by Charles Darwin. He employed the concept to describe the process of how different varieties and species envovled  from common ancestors. Ernst Haeckel went further by proposing phylogenic histories of life to illustrate relationships of species over time. The tree of life is now called the phylogenetic tree or evolutionary tree in this sense.\cite{treeOfLifeDefine}\cite{phylogeneticTree}
 
 
-The tree of life can work as a useful tool in biology research. Biological research of all kinds, no matter it is ecological health, environmental change or human disease depends on understanding the relationships between different species. ~\cite{treeOfLifeDefine} Therefore, it is necessary to provide scientists a useful way to visualize the tree of life.
+The tree of life can work as a useful tool in biology research. Biological research of all kinds, no matter it is ecological health, environmental change or human disease depends on understanding the relationships between different species.\cite{treeOfLifeDefine} Therefore, it is necessary to provide scientists a useful way to visualize the tree of life.
 
 \subsection{Traditional way to visualize the tree of life}
 
@@ -139,13 +139,13 @@ This section discusses the traditional methods for tree of life visualization an
   \label{fig:eucdeanDrawing}
 \end{figure}
   
-  One way is to collapse nodes to save space. The choice of which node to collapse depends on the user's interest or could be done automatically, for instance, when given an introduction navigation.~\cite{euclidean} By collapsing and expanding the nodes, a user can navigate force and back between different biological level. At the same time, as all information a user not interested in is folded by the user,the visual elements can keep relatively constant at the selected level. Hence, this method provides a reasonable solution for drawing a huge hierarchy data set visualization.
+  One way is to collapse nodes to save space. The choice of which node to collapse depends on the user's interest or could be done automatically, for instance, when given an introduction navigation.\cite{euclidean} By collapsing and expanding the nodes, a user can navigate force and back between different biological level. At the same time, as all information a user not interested in is folded by the user,the visual elements can keep relatively constant at the selected level. Hence, this method provides a reasonable solution for drawing a huge hierarchy data set visualization.
   
 However, this method is not without is drawbacks. One disadvantage is that navigating between different level of scale is not convenient. For example, if the user is currently viewing human beings and he or she wants to move back to see the whole tree, then an implementation of this method might need the user to move their mouses on the collapse button for several times. Apparently, this method is much less user friendly when compared with the IFIG method, which requires only zoom out to do the same work.
 
   \item Multi-monitors
 
-  As the name suggested, multi-monitors use multiple monitors in order to make the screen big enough for displaying very large images. The 2003 special issue of Science devoted to the tree of life included a 3,000-taxa tree that was best viewed when enlarged to a 1.5-meter diameter.~\cite{multipleMonitoring} Today, phylogenies with tens of thousands of taxa are being published~\cite{multipleMonitoring2}, pushing the limits of what existing software can display. One of the strategy to solve the display problem is to use multiple monitors to make up of a screen large enough to display the whole tree(Please see Figure ~\ref{fig:multipleMonitoring} ).
+  As the name suggested, multi-monitors use multiple monitors in order to make the screen big enough for displaying very large images. The 2003 special issue of Science devoted to the tree of life included a 3,000-taxa tree that was best viewed when enlarged to a 1.5-meter diameter.\cite{multipleMonitoring} Today, phylogenies with tens of thousands of taxa are being published\cite{multipleMonitoring2}, pushing the limits of what existing software can display. One of the strategy to solve the display problem is to use multiple monitors to make up of a screen large enough to display the whole tree(Please see Figure ~\ref{fig:multipleMonitoring} ).
   
   \begin{figure}[H]
   \centering
@@ -158,7 +158,7 @@ However, this method is not without is drawbacks. One disadvantage is that navig
   
   \item Hyperbolic viewers
   
-  The hyperbolic viewer would keep the tree unchanged, but instead distort the space in which the tree is displayed.~\cite{euclidean} The main idea of the method is to focus on the part of the tree the user interest in and squish other parts of the tree so that they can be displayed in a single screen. However, this approach is not highly appreciated by users since they find them hard to navigate(Please see Figure ~\ref{fig:Hyperbolic}).
+  The hyperbolic viewer would keep the tree unchanged, but instead distort the space in which the tree is displayed.\cite{euclidean} The main idea of the method is to focus on the part of the tree the user interest in and squish other parts of the tree so that they can be displayed in a single screen. However, this approach is not highly appreciated by users since they find them hard to navigate(Please see Figure ~\ref{fig:Hyperbolic}).
   
   \begin{figure}[H]
   \centering
@@ -172,11 +172,11 @@ However, this method is not without is drawbacks. One disadvantage is that navig
 
 \subsection{Interactive fractal-inspired graph}
 
-As the previous section discussed, traditional methods face many problems when dealing with huge tree of life. One way to solve these issues is the interactive fractal-inspired graph(IFIG), which includes all species as well as all their metadata. 
+As the previous section discussed, traditional methods face many problems when dealing with huge tree of life. One way to solve these issues is the interactive fractal-inspired graph(IFIG), which includes all species as well as all their metadata. IFIG is the method that this project as well as the oneZoom website used for visualizing the tree of life. 
 
-The key concept of the IFIG method is to place all the data on one page such that users could navigate between different scales by simply zooming in and out.~\cite{oneZoomWebsite} Therefore, users can't see all information of all species at one time. Instead, when the scale is big enough, users could see the whole picture of the tree of life but with few details of each species. When users zoom into the tree, more details of the selected area will be displayed while other species might go out of the screen.
+The key concept of the IFIG method is to place all the data on one page such that users could navigate between different scales by simply zooming in and out.\cite{oneZoomWebsite} Therefore, users can't see all information of all species at one time. Instead, when the scale is big enough, users could see the whole picture of the tree of life but with few details of each species. When users zoom into the tree, more details of the selected area will be displayed while other species might go out of the screen.
 
-The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns).~\cite{oneZoom} Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.~\cite{oneZoom} Therefore, users can easily zoom in through the tree to any point of interest (see Figure ~\ref{fig:oneZoomExample}, which used data from ~\cite{dataForOneZoom}).
+The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns).\cite{oneZoom} Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.~\cite{oneZoom} Therefore, users can easily zoom in through the tree to any point of interest (see Figure ~\ref{fig:oneZoomExample}, which used data from \cite{dataForOneZoom}).
 
 \begin{figure}[H]
   \centering
@@ -185,15 +185,20 @@ The interface of the OneZoom is analogous to Google Earth. When using google ear
   \label{fig:oneZoomExample}
 \end{figure}
 
-The hierarchical dataset is represented by using fractals. Fractals often appear in the natural world.\cite{fractal1}\cite{fractal2} Fractals may be exactly the same at every scale, or they may be nearly the same at different scales,\cite{fractalWiki1}\cite{fractalWiki2}\cite{fractalWiki3}\cite{fractalWiki4}  which is the case in this project.
+The hierarchical dataset is represented by using fractals. Fractals often appear in the natural world.\cite{fractal1}\cite{fractal2} They may be exactly the same at every scale, or nearly the same at different scales,\cite{fractalWiki1}\cite{fractalWiki2}\cite{fractalWiki3}\cite{fractalWiki4}  which is the case in this project. 
 
-Moreover, fractals simplify the representation of huge hierarchical dataset. All levels of data are represented in the same way. So inserting or deleting data can be automatically adopted by the software in the tree representation.
+Using fractals ensures that all the phylogenetic data can be placed on a scalable two dimension map. 
+Using self similarity characteristic of a fractal, it is possible to standardize the view at every level of the view. In a fractal tree, a similar view is obtained when the sub tree is magnified. However huge the the displayed tree is, the view obtained by focusing a part of the tree is almost the same.\cite{fractalMath}
+
+When the fractal tree is used to display huge dataset, the nodes in high depth cannot be recognize because their size is smaller than a threshold. However, this won't lower user experience. On the contrary, users can concentrate their attention on the focus and its neighbours since they won't be distracted by the nodes far from the focus. By setting a threshold to erase nodes whose size is smaller than the threshold, the software can greatly shorten its response time. In fact, the number of nodes whose size is smaller than the threshold as well as is within the screen should keep constant at any different level of scale. In other words, the number of displayed nodes is constant when users change their focus. Therefore, it is possible to keep the system's response time to be constant.\cite{fractalMath}
 
 
 
 \section{OneZoom Android Application}
 
 The IFIG method was only implemented using javascript and html5. The aim of this project is to develop an android application of it. The application is based on the javascript code written by Dr. James Rosindell. 
+
+The first stage of developing the application involves adapting codes from the oneZoom website software into an android application.
 
 When the application was developed, the first issue that arose is that the loading time of a tree is over long. This problem also occurs in the website software, though it is not very obvious due to faster processor of personal computer compared to a mobile device. The fluency of the user interaction is a issue. There were apparent delays when users interacted with the application. Both of these issues have been solved and details of that will be discussed in Chapter 5.
 
@@ -208,11 +213,11 @@ Chapter 2 gives introduction to the software that will be built on. It includes 
  When the dataset gets larger, the application will hit memory limitation. Chapter 4 gives a description of this issue and also the solution for it. Chapter 5 discusses ways to improve the performance of the application. It includes shortening loading time as well as making user interaction more fluent.
  
 
-\chapter{OneZoom Website Software Introduction}
+\chapter{OneZoom Website Software}
 
 This chapter gives a brief introduction to the OneZoom website software, on which the whole project has been built. It manifests how the raw data is organized and how the member variables of the node object built based on the raw data. Then it explains the criteria for selecting elements to be drawn. These two sections are highly related to the memory issue that will be discussed later. Then an introduction to the software working flow would be given, which is highly related to the performance issue in Chapter 5. Lastly, I will illustrate how to use the software from a user's perspective.
 
-\section{Data Processing}
+\section{Data processing}
 
 \subsection{Raw data format}
 
@@ -288,9 +293,9 @@ When pre calculation is over, the software will call a method to update the view
     % Place nodes
     \node [block] (drawLoading) {Displaying Loading};
     \node [block, below of=drawLoading, node distance = 4cm] (load) {Loading and Pre Calculating};
-    \node [block, right of=load, node distance = 5.5cm](update) {Update View};
-    \node [block, right of=drawLoading, node distance = 5.5cm] (view) {Displaying Tree};
-    \node [block, right of =view, node distance = 5.5cm](operation){Drag or Zoom};
+    \node [block, right of=load, node distance = 4.7cm](update) {Update View};
+    \node [block, right of=drawLoading, node distance = 4.7cm] (view) {Displaying Tree};
+    \node [block, right of =view, node distance = 4.7cm](operation){Drag or Zoom};
     \node [block, below of=operation, node distance = 4cm](setting){Recalculation or Set Parameters};
     %Draw edges
     \path [line] (drawLoading) -- (load);
@@ -303,34 +308,34 @@ When pre calculation is over, the software will call a method to update the view
 
 
 \section{How to use the software}
-Basically, the OneZoom software allows users to explore the tree of life in a completely new way: it's like a map, everything is on one page, all you have to do is zoom in and out(reference). When a user zooms in, some nodes become visible and more details will be shown on nodes. On the other hand, when a user zooms out, some nodes become invisible and some details will disappear in order to provide the user a neat view. 
+Basically, the OneZoom software allows users to explore the tree of life in a completely new way: it's like a map, everything is on one page, all you have to do is zoom in and out. When a user zooms in, some nodes become visible and more details will be shown on nodes. On the other hand, when a user zooms out, some nodes become invisible and some details will disappear in order to provide the user a neat view. 
 
-For example, in the figure of the tree of mammals, one branch is covered by a signpost rodents. If we zoom in this area, we can see that more signposts appears telling us more details of the rodent family. If we continue zoom in the mouse-like rodents, we can see that nodes that was invisible in the first two figures emerging.
+For example, in Figure \ref{fig:mammal}, one branch is covered by a signpost rodents. If we zoom in this area, we can see that more signposts appears telling us more details of the rodent family in Figure \ref{fig:rodent}. If we continue zoom in the mouse-like rodents, we can see that nodes that was invisible in Figure \ref{fig:mammal} and Figure \ref{fig:rodent} emerging.
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=8.8cm]{Mammal}
+  \includegraphics [width=12.5cm,height=7.4cm]{Mammal}
   \caption{Tree of Mammals}
   \label{fig:mammal}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=8.8cm]{Rodent}
+  \includegraphics [width=12.5cm,height=7.4cm]{Rodent}
   \caption{Tree of Rodents: Zoom In to the Rodent Branch}
   \label{fig:rodent}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=8cm]{MouseLikeRodent}
+  \includegraphics [width=12.5cm,height=7.4cm]{MouseLikeRodent}
   \caption{Zoom In the to Mouse Like Rodents Branch}
   \label{fig:mouseLikeRodent}
 \end{figure}
 
-\chapter{OneZoom Android Application Introduction}
+\chapter{OneZoom Android Application}
 
-This chapter will describe changes of implementation from the website software to android application. More details concerning how to improve the performance of the software and how to break the memory limitation for larger trees will be discussed in Chapter 4 and Chapter 5.
+This chapter describes changes of implementation from the website software to android application. More details concerning how to improve the performance of the software and how to break the memory limitation for larger trees will be discussed in Chapter 4 and Chapter 5.
 
 \section{Create subclass for link node and leaf node}
 
@@ -367,7 +372,7 @@ The application now supports three kinds of user interaction: using one finger t
 \end{lstlisting}
 
 
-\chapter{Memory handling issues}
+\chapter{Memory Handling Issues}
 
 \section{Problem description}
 
@@ -463,8 +468,8 @@ When the application starts or when the user interacts with view, the applicatio
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (child1) {node = child1};
-    \node [decision, right of=child1, node distance = 5.5cm] (test2) {$size > threshold$};
-    \node [block, right of=test2, node distance = 5.5cm] (child2) {node = child2};
+    \node [decision, right of=child1, node distance = 4.7cm] (test2) {$size > threshold$};
+    \node [block, right of=test2, node distance = 4.7cm] (child2) {node = child2};
     \node [decision, above of=test2, node distance = 3.9cm] (test1) {inside screen};
     \node [block, above of=test1, node distance = 3.5cm] (build) {build node};
     \node [block, above of=build, node distance = 3cm] (root) {node = root};
@@ -484,7 +489,7 @@ Suppose the screen area is the yellow box in Figure~\ref{fig:screenAndBounding1}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=8.8cm]{ScreenAndBounding1}
+  \includegraphics [width=12.5cm,height=7.4cm]{ScreenAndBounding1}
   \caption{Using Bouding Box to select branch}
   \label{fig:screenAndBounding1}
 \end{figure}
@@ -493,7 +498,7 @@ In Figure~\ref{fig:screenAndBounding2}, the bounding box of child1(blue box) is 
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=8.8cm]{ScreenAndBounding2}
+  \includegraphics [width=12.5cm,height=7.4cm]{ScreenAndBounding2}
   \caption{Bounding box of child1 and child2 of root}
   \label{fig:screenAndBounding2}
 \end{figure}
@@ -524,9 +529,8 @@ The database also includes the id of both children. When the node pass the test,
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=15cm,height=7.8cm]{Database}
+  \includegraphics [width=12.5cm,height=7.4cm]{Database}
   \caption{Database columns}
-  \label{fig:mammal}
 \end{figure}
 
 Again, because of memory size limitation, the application can't build a database containing all nodes. Instead, only for the nodes whose richness or whose parent richness is greater or equal to a threshold, the node information will be recorded in the database. For the nodes whose richness is smaller than the threshold, the start and end position of its data will represent itself plus both of its children. For the bacteria tree, the threshold is 500. The table of bacteria contains  19543 rows, which is about 2.5\% the total amount of nodes in the original bacteria raw data. For the rest trees, the threshold is 50.
@@ -547,16 +551,16 @@ If the test result is 0, the recalculation should stop here. Otherwise if the re
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (children) {node = child1 node = child2};
-    \node [decision, right of=children, node distance = 5.5cm] (threshold) {$richness < threshold$};
-    \node [block, right of=threshold, node distance = 5.5cm] (build) {Build all children of mini root};
+    \node [decision, right of=children, node distance = 4.7cm] (threshold) {$richness < threshold$};
+    \node [block, right of=threshold, node distance = 4.7cm] (build) {Build all children of mini root};
     \node [decision, above of=threshold, node distance = 3.3cm] (leaf) {$richness=1$};
     \node [block, above of=leaf, node distance = 3cm] (add) {add node to running list};
     \node [block, above of=add, node distance = 2.5cm] (remove) {remove node from non initialization list};
     \node [decision, above of=remove, node distance = 3cm] (test) {display node?};
     \node [block, above of=test, node distance = 3cm] (root) {node = root};
-    \node [decision, right of=test, node distance = 5.5cm] (inRunning) {node in running list?};
+    \node [decision, right of=test, node distance = 4.7cm] (inRunning) {node in running list?};
     \node [block, below of=inRunning, node distance = 3.5cm] (add2) {add node to non initialization list}; 
-    \node [block, right of=leaf, node distance = 5.5cm] (end2) {end};
+    \node [block, right of=leaf, node distance = 4.7cm] (end2) {end};
 
 
     %Draw edges
@@ -603,7 +607,7 @@ Figures like 0.6, -0.1, -1.1 are not calculated by accurate mathematical model. 
    				  {0.6*x^2 - 0.1*x}; 
  				 \end{axis}
 				\end{tikzpicture}
-        \caption{Possibility with distance}\label{fig:animals}
+        \caption{Possibility with distance}
 \end{figure}
 
 \begin{figure}[H]
@@ -616,7 +620,7 @@ Figures like 0.6, -0.1, -1.1 are not calculated by accurate mathematical model. 
    				  {0.6*x^2 - 1.1*x +0.5}; 
  				 \end{axis}
 				\end{tikzpicture}
-        \caption{Possibility with size}\label{fig:animals}
+        \caption{Possibility with size}
 \end{figure}
 
 After calculating the possibility of nodes in running list, the running list will be sorted according to the nodes possibility. Then remove the first node as well as all of its children from the running list and free the memory of these nodes. Then continue to remove the node from the beginning of the running list until there are enough unused memory for this application.
@@ -625,16 +629,16 @@ After calculating the possibility of nodes in running list, the running list wil
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (recalculation) {Recalculation};
-    \node [block, right of=recalculation, node distance = 5.5cm] (poss) {Calculate Possibility};
-    \node [block, right of=poss, node distance = 5.5cm] (sort) {Sort running list};
+    \node [block, right of=recalculation, node distance = 4.7cm] (poss) {Calculate Possibility};
+    \node [block, right of=poss, node distance = 4.7cm] (sort) {Sort running list};
     \node [decision, below of=sort, node distance = 2.7cm] (space) {$memory < 10 Mb$};
-    \node [block, left of=space, node distance = 5.5cm] (remove) {Remove 1st node \& its children from running list};    
+    \node [block, left of=space, node distance = 4.7cm] (remove) {Remove 1st node \& its children from running list};    
     %Draw edges
     \path [line] (recalculation) -- (poss);
     \path [line] (poss) -- (sort);
     \path [line] (sort) -- (space);
-	\draw [->] (7.2,-2.4) -- (9.9,-2.4);
-	\draw [->] (9.9,-3.0) -- (7.2,-3.0);
+	\draw [->] (6.4,-2.4) -- (8.2,-2.4);
+	\draw [->] (8.2,-3.0) -- (6.4,-3.0);
 \end{tikzpicture}
 \caption{Work flow of deleting nodes on the tree}
 \end{figure}
@@ -731,9 +735,9 @@ When user drags or zooms on the view, the view listener would receive a set of d
 \begin{tikzpicture}[node distance = 6cm, auto]
     % Place nodes
     \node [block] (view) {View};
-    \node [block, right of=view] (operation) {Drag or Zoom};
+    \node [block, right of=view, node distance = 6cm] (operation) {Drag or Zoom};
     \node [block, below of=operation, node distance = 3cm](recalculation) {Recalculate drawing nodes};
-    \node [block, left of=recalculation] (update) {Draw nodes};
+    \node [block, left of=recalculation, node distance = 6cm] (update) {Draw nodes};
     %Draw edges
     \path [line] (view) -- node[red]{Listen}(operation);
     \path [line] (operation) -- (recalculation);
@@ -748,15 +752,15 @@ When user drags or zooms on the view, the view listener would receive a set of d
 In order to reduce the response time, the extra finger move messages should be discarded. Another thread and message queue is used to solve this problem. When a user triggers a set of move actions, a set of recalculation messages will be sent from the main UI thread to the calculation thread. In the calculation thread, when it catches a recalculation message while there are other recalculation messages in the message queue, then the current recalculation message will be discarded. Otherwise, the recalculation method will be called. Hence, when there are several recalculation messages being sent, only the last one will be processed. When the recalculation is over, the calculation thread will send message to invalidate the view. 
 
  \begin{figure}[H]
- \begin{tikzpicture}[node distance = 5.5cm, auto]
+ \begin{tikzpicture}[node distance = 4.7cm, auto]
     % Place nodes
     \node [block] (view) {View};
-    \node [block, right of=view] (operation) {Drag or Zoom};
+    \node [block, right of=view, node distance = 4.7cm] (operation) {Drag or Zoom};
     \node [block, below of=operation, node distance=3cm] (looper) {Looper};
     \node [block, below of=looper, node distance = 3cm] (handler) {Handler};
-    \node [block, right of=looper, node distance = 5.5cm] (catcher) {Catch next message};
+    \node [block, right of=looper, node distance = 4.7cm] (catcher) {Catch next message};
     \node [decision, below of=handler, node distance = 3.5cm] (decision) {The only recalc message?};
-    \node [block, left of=decision] (recalculation) {Recalculation};
+    \node [block, left of=decision, node distance = 4.7cm] (recalculation) {Recalculation};
     %Draw edges
     \path [line] (view) -- (operation);
     \path [line] (operation) -- node[red] {Send Message} (looper);
@@ -782,12 +786,12 @@ This is one cycle of allocating new nodes during idle time. When the cycle ends,
  \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (term1) {Delete nodes from running list};
-    \node [decision, right of=term1, node distance=5.5cm] (test) {Recalculation in Message Queue?};
+    \node [decision, right of=term1, node distance=4.7cm] (test) {Recalculation in Message Queue?};
     \node [decision, below of=test, node distance = 4cm] (test2) {Enough memory?};
-    \node [block, right of=test2, node distance = 5.5cm] (sort) {Sort non initialization list};
+    \node [block, right of=test2, node distance = 4.7cm] (sort) {Sort non initialization list};
     \node [block, above of=sort, node distance = 4cm] (build) {Initialize one node from non initialization list};    
-    \node [block, above of=test, node distance =3.5cm] (poss) {Calculate possibility};
-    \node [block, above of=term1, node distance = 3.5cm] (recalc) {Recalculation Finish};
+    \node [block, above of=test, node distance = 4cm] (poss) {Calculate possibility};
+    \node [block, above of=term1, node distance = 4cm] (recalc) {Recalculation Finish};
   
    
     %Draw edges
@@ -816,7 +820,7 @@ When the recalculation is done, it will send message to update the view. From a 
 \begin{tikzpicture}[node distance = 4cm, auto]
     % Place nodes
     \node [block] (view) {View};
-    \node [block, right of=view, node distance = 5.5cm] (operation) {Drag or Zoom};
+    \node [block, right of=view, node distance = 4.5cm] (operation) {Drag or Zoom};
     \node [block, right of=operation, node distance = 5.5cm] (update) {Update View};
     \node [block, above of=update, node distance = 3cm] (recalculation) {Recalculation};
     \node [decision, below of=update, node distance = 4cm] (test) {Test whether should use bitmap};
@@ -854,9 +858,9 @@ There is one more thing needing to be tested for whether to use bitmap . When th
     \node [block] (test) {Test whether should use bitmap};
 	\node [decision, below of=test, node distance = 4cm](interaction){During interaction};
 	\node [decision, below of=interaction, node distance = 4cm](counter){Counter equals};
-	\node [block, right of=counter, node distance =5.5cm] (bitmap) {Drawing bitmap};
+	\node [block, right of=counter, node distance =4.7cm] (bitmap) {Drawing bitmap};
 	\node [decision, below of=bitmap, node distance = 4cm](recalculation){During recalculation};
-	\node [block, right of=recalculation, node distance = 5.5cm] (redrawn) {Drawing nodes};
+	\node [block, right of=recalculation, node distance = 4.7cm] (redrawn) {Drawing nodes};
     %Draw edges
      \path [line] (test) -- (interaction);
     \path [line] (interaction) -- node[red] {No} (counter);
@@ -876,7 +880,7 @@ There is one more thing needing to be tested for whether to use bitmap . When th
 In order to update the view by drawing nodes as soon as the user moves their fingers off the screen, the application would increase the threshold of displaying nodes when interaction begins. Therefore, less nodes would be added and drawn in the drawing list. It would shorten the time for recalculating as well as drawing. One second later the view is updated with high threshold, the view will send another recalculation message to another thread to calculate again with more details. If during this one second user interacts with the view, the result of this recalculation won't be drawn since the counter in view has been updated. If user has no interaction with the view, then after user could see the view being updated with more details. From a user perspective, he or she could get the view rapidly updated after their interaction with the view. Then one seconds later, more details would be drawn on the screen.
 
 
-\chapter{Conclusion and future work}
+\chapter{Conclusion and Future Work}
 
 This chapter summarizes about the achievements of this project as well as a brief description for the possible future work.
 

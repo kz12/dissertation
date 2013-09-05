@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 SEP 2013 21:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 SEP 2013 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,12 +797,6 @@ LaTeX Warning: Label `table:nonlin' multiply defined.
 LaTeX Warning: Label `table:nonlin' multiply defined.
 
 
-LaTeX Warning: Label `fig:mammal' multiply defined.
-
-
-LaTeX Warning: Label `fig:animals' multiply defined.
-
-
 LaTeX Warning: Label `table:nonlin' multiply defined.
 
 
@@ -1006,166 +1000,139 @@ File: oneZoomExample.png Graphic file (type png)
 Package pdftex.def Info: oneZoomExample.png used on input line 183.
 (pdftex.def)             Requested size: 284.53442pt x 193.4835pt.
 
-[12 <./oneZoomExample.png>] [13]
+[12 <./oneZoomExample.png>] [13] [14]
 Chapter 2.
-[14
+[15
 
 ]
-Overfull \hbox (2.8052pt too wide) in paragraph at lines 244--245
+Overfull \hbox (2.8052pt too wide) in paragraph at lines 249--250
 \T1/cmr/m/n/10.95 name) with com-mon name Short-beaked Echidna and redlist sta-
 tus LC(which
  []
 
-[15] [16]
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 302--303
+[16] [17]
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 307--308
 [][] 
  []
 
-[17] <Mammal.png, id=71, 883.3pt x 660.4675pt>
+[18] <Mammal.png, id=74, 883.3pt x 660.4675pt>
 File: Mammal.png Graphic file (type png)
  <use Mammal.png>
-Package pdftex.def Info: Mammal.png used on input line 312.
-(pdftex.def)             Requested size: 426.7961pt x 250.38565pt.
+Package pdftex.def Info: Mammal.png used on input line 317.
+(pdftex.def)             Requested size: 355.65892pt x 210.54768pt.
 
-Overfull \hbox (68.29112pt too wide) in paragraph at lines 312--313
- [][] 
- []
-
-<Rodent.png, id=72, 955.57pt x 642.4pt>
+<Rodent.png, id=75, 955.57pt x 642.4pt>
 File: Rodent.png Graphic file (type png)
  <use Rodent.png>
-Package pdftex.def Info: Rodent.png used on input line 319.
-(pdftex.def)             Requested size: 426.78017pt x 250.37816pt.
-
-Overfull \hbox (68.27519pt too wide) in paragraph at lines 319--320
- [][] 
- []
-
-[18 <./Mammal.png>] <MouseLikeRodent.png, id=76, 894.34125pt x 588.1975pt>
+Package pdftex.def Info: Rodent.png used on input line 324.
+(pdftex.def)             Requested size: 355.655pt x 210.55173pt.
+ [19 <./Mammal.png>]
+<MouseLikeRodent.png, id=80, 894.34125pt x 588.1975pt>
 File: MouseLikeRodent.png Graphic file (type png)
 
 <use MouseLikeRodent.png>
-Package pdftex.def Info: MouseLikeRodent.png used on input line 326.
-(pdftex.def)             Requested size: 426.79526pt x 227.61902pt.
-
-Overfull \hbox (68.29028pt too wide) in paragraph at lines 326--327
- [][] 
- []
-
-[19 <./Rodent.png> <./MouseLikeRodent.png>]
+Package pdftex.def Info: MouseLikeRodent.png used on input line 331.
+(pdftex.def)             Requested size: 355.66954pt x 210.54826pt.
+ [20 <./Rodent.png> <./MouseLikeRodent.png>]
 Chapter 3.
-[20
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 348.
 
-]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 343.
-
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [21]
-Chapter 4.
-[22
+) [21
 
-] [23]
-Overfull \hbox (36.9936pt too wide) in paragraph at lines 438--452
+] [22]
+Chapter 4.
+[23
+
+] [24]
+Overfull \hbox (36.9936pt too wide) in paragraph at lines 443--457
  [][] 
  []
 
-[24]
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 479--480
+[25]
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 484--485
 [][] 
  []
 
-<ScreenAndBounding1.png, id=100, 914.41624pt x 633.36626pt>
+<ScreenAndBounding1.png, id=104, 914.41624pt x 633.36626pt>
 File: ScreenAndBounding1.png Graphic file (type png)
 
 <use ScreenAndBounding1.png>
-Package pdftex.def Info: ScreenAndBounding1.png used on input line 487.
-(pdftex.def)             Requested size: 426.78978pt x 250.38472pt.
-
-Overfull \hbox (68.2848pt too wide) in paragraph at lines 487--488
- [][] 
- []
-
-[25] <ScreenAndBounding2.png, id=105, 923.45pt x 626.34pt>
+Package pdftex.def Info: ScreenAndBounding1.png used on input line 492.
+(pdftex.def)             Requested size: 355.65816pt x 210.54814pt.
+ [26]
+<ScreenAndBounding2.png, id=108, 923.45pt x 626.34pt>
 File: ScreenAndBounding2.png Graphic file (type png)
 
 <use ScreenAndBounding2.png>
-Package pdftex.def Info: ScreenAndBounding2.png used on input line 496.
-(pdftex.def)             Requested size: 426.79303pt x 250.3882pt.
-
-Overfull \hbox (68.28806pt too wide) in paragraph at lines 496--497
- [][] 
- []
-
-[26 <./ScreenAndBounding1.png>] [27 <./ScreenAndBounding2.png>]
-<Database.png, id=112, 387.4475pt x 327.2225pt>
+Package pdftex.def Info: ScreenAndBounding2.png used on input line 501.
+(pdftex.def)             Requested size: 355.66321pt x 210.54437pt.
+ [27 <./ScreenAndBounding1.png> <./ScreenAndBounding2.png>] <Database.png, id=1
+12, 387.4475pt x 327.2225pt>
 File: Database.png Graphic file (type png)
  <use Database.png>
-Package pdftex.def Info: Database.png used on input line 527.
-(pdftex.def)             Requested size: 426.79659pt x 221.92915pt.
+Package pdftex.def Info: Database.png used on input line 532.
+(pdftex.def)             Requested size: 355.66382pt x 210.5501pt.
 
-Overfull \hbox (68.29161pt too wide) in paragraph at lines 527--528
- [][] 
- []
-
-[28 <./Database.png>] [29]
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 576--577
+[28] [29 <./Database.png>]
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 580--581
 [][] 
  []
 
-[30]
+[30] [31]
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 587.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 591.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 587.
+LaTeX Warning: Command \textless invalid in math mode on input line 591.
 
-[31]
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 638--639
+[32]
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 642--643
 [][] 
  []
 
-[32] [33]
+[33] [34]
 Chapter 5.
-[34
+[35
 
 ]
 
-Package caption Warning: \label without proper \caption on input line 718.
+Package caption Warning: \label without proper \caption on input line 722.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:loadingCamparison' on page 35 undefined on inpu
-t line 722.
+LaTeX Warning: Reference `table:loadingCamparison' on page 36 undefined on inpu
+t line 726.
 
-[35]
-Overfull \hbox (71.91093pt too wide) in paragraph at lines 769--770
+[36]
+Overfull \hbox (26.38637pt too wide) in paragraph at lines 773--774
 [][] 
  []
 
-[36] [37]
-Overfull \hbox (4.38837pt too wide) in paragraph at lines 785--785
+[37] [38]
+Overfull \hbox (4.38837pt too wide) in paragraph at lines 789--789
  [][][][]\T1/cmr/m/n/10.95 Recalculation 
  []
 
 
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 803--804
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 807--808
 [][] 
  []
 
-[38]
-Overfull \hbox (61.49474pt too wide) in paragraph at lines 839--840
+[39]
+Overfull \hbox (33.04199pt too wide) in paragraph at lines 843--844
 [][] 
  []
 
-[39] [40]
-Overfull \hbox (49.23611pt too wide) in paragraph at lines 869--870
+[40] [41]
+Overfull \hbox (3.71155pt too wide) in paragraph at lines 873--874
 [][] 
  []
 
-[41] [42] [43]
+[42] [43] [44]
 Chapter 6.
-(./icldiss.bbl [44
+(./icldiss.bbl [45
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -1173,9 +1140,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
  _ (biology ) #The _
  []
 
-[45
+[46
 
-]) [46] (./icldiss.aux)
+]) [47] (./icldiss.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1184,13 +1151,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24547 strings out of 493488
- 548213 string characters out of 3141326
- 710655 words of memory out of 3000000
- 27364 multiletter control sequences out of 15000+200000
+ 24545 strings out of 493488
+ 548161 string characters out of 3141326
+ 710602 words of memory out of 3000000
+ 27362 multiletter control sequences out of 15000+200000
  15909 words of font info for 42 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 65i,11n,93p,1506b,1601s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,11n,93p,1506b,1721s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -1206,10 +1173,10 @@ ve/2012/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
 012/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
 2/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2012/
 texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on icldiss.pdf (46 pages, 5243091 bytes).
+Output written on icldiss.pdf (47 pages, 5246313 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 227 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
