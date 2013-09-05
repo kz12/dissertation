@@ -144,6 +144,7 @@ This section discusses the traditional methods for tree of life visualization an
 However, this method is not without is drawbacks. One disadvantage is that navigating between different level of scale is not convenient. For example, if the user is currently viewing human beings and he or she wants to move back to see the whole tree, then an implementation of this method might need the user to move their mouses on the collapse button for several times. Apparently, this method is much less user friendly when compared with the IFIG method, which requires only zoom out to do the same work.
 
   \item Multi-monitors
+
   As the name suggested, multi-monitors use multiple monitors in order to make the screen big enough for displaying very large images. The 2003 special issue of Science devoted to the tree of life included a 3,000-taxa tree that was best viewed when enlarged to a 1.5-meter diameter.~\cite{multipleMonitoring} Today, phylogenies with tens of thousands of taxa are being published~\cite{multipleMonitoring2}, pushing the limits of what existing software can display. One of the strategy to solve the display problem is to use multiple monitors to make up of a screen large enough to display the whole tree(Please see Figure ~\ref{fig:multipleMonitoring} ).
   
   \begin{figure}[H]
@@ -156,6 +157,7 @@ However, this method is not without is drawbacks. One disadvantage is that navig
   As we can see, this method is very intuitive, but also has very obvious disadvantages. Most important of all is the high expense on screens. Nowadays, the amount of species known is above several millions. If we expect to draw all species in one picture, then the number of monitors may increase to thousands. Hence the cost on monitors can be huge. Not only the cost, but the space needed to place those monitors is highly impossible to cater.
   
   \item Hyperbolic viewers
+  
   The hyperbolic viewer would keep the tree unchanged, but instead distort the space in which the tree is displayed.~\cite{euclidean} The main idea of the method is to focus on the part of the tree the user interest in and squish other parts of the tree so that they can be displayed in a single screen. However, this approach is not highly appreciated by users since they find them hard to navigate(Please see Figure ~\ref{fig:Hyperbolic}).
   
   \begin{figure}[H]
@@ -174,7 +176,18 @@ As the previous section discussed, traditional methods face many problems when d
 
 The key concept of the IFIG method is to place all the data on one page such that users could navigate between different scales by simply zooming in and out.~\cite{oneZoomWebsite} Therefore, users can't see all information of all species at one time. Instead, when the scale is big enough, users could see the whole picture of the tree of life but with few details of each species. When users zoom into the tree, more details of the selected area will be displayed while other species might go out of the screen.
 
-The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns).~\cite{oneZoom} Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.~\cite{oneZoom} The hierarchical dataset is represented by using fractals. Fractals are typically self similar patterns, where self similar means they are "the same from near as from far". This means the shapes of branches and nodes remains similar at different scales of zoom.~\cite{fractalBook} Hence, it could ensure the amount of visual elements on a screen remains relatively constant. Moreover, fractals simplify the representation of huge hierarchical dataset. All levels of data are represented in the same way. So inserting or deleting data can be automatically adopted by the software in the tree representation.
+The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns).~\cite{oneZoom} Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.~\cite{oneZoom} Therefore, users can easily zoom in through the tree to any point of interest (see Figure ~\ref{fig:oneZoomExample}, which used data from ~\cite{dataForOneZoom}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics [width=10cm,height=6.8cm]{oneZoomExample}
+  \caption{An example IFIG of a 408,135-tip phylogeny of small-subunit RNAs using data from SILVA}
+  \label{fig:oneZoomExample}
+\end{figure}
+
+The hierarchical dataset is represented by using fractals. Fractals often appear in the natural world.\cite{fractal1}\cite{fractal2} Fractals may be exactly the same at every scale, or they may be nearly the same at different scales,\cite{fractalWiki1}\cite{fractalWiki2}\cite{fractalWiki3}\cite{fractalWiki4}  which is the case in this project.
+
+Moreover, fractals simplify the representation of huge hierarchical dataset. All levels of data are represented in the same way. So inserting or deleting data can be automatically adopted by the software in the tree representation.
 
 
 

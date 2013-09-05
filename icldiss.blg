@@ -6,45 +6,57 @@ Database file #1: icldiss.bib
 Warning--to sort, need author or key in treeOfLifeDefine
 Warning--to sort, need author or key in phylogeneticTree
 Warning--to sort, need author or key in oneZoomWebsite
-You've used 8 entries,
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Pruesse E, Quast C, Knittel K, Fuchs BM, Ludwig W, et al." for entry dataForOneZoom
+while executing---line 1090 of file plain.bst
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            539 strings with 4797 characters,
-and the built_in function-call counts, 1752 in all, are:
-= -- 168
-> -- 44
-< -- 0
-+ -- 20
-- -- 12
-* -- 102
-:= -- 274
-add.period$ -- 18
-call.type$ -- 8
-change.case$ -- 26
+            576 strings with 5510 characters,
+and the built_in function-call counts, 3489 in all, are:
+= -- 344
+> -- 86
+< -- 1
++ -- 40
+- -- 24
+* -- 196
+:= -- 550
+add.period$ -- 36
+call.type$ -- 14
+change.case$ -- 47
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 75
-empty$ -- 182
-format.name$ -- 12
-if$ -- 377
+cite$ -- 17
+duplicate$ -- 161
+empty$ -- 342
+format.name$ -- 24
+if$ -- 760
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 6
-newline$ -- 37
-num.names$ -- 10
-pop$ -- 46
+int.to.str$ -- 14
+missing$ -- 15
+newline$ -- 67
+num.names$ -- 22
+pop$ -- 77
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 40
 quote$ -- 0
-skip$ -- 63
+skip$ -- 125
 stack$ -- 0
-substring$ -- 96
-swap$ -- 8
-text.length$ -- 0
+substring$ -- 222
+swap$ -- 31
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
+type$ -- 48
 warning$ -- 3
-while$ -- 14
-width$ -- 9
-write$ -- 70
-(There were 3 warnings)
+while$ -- 31
+width$ -- 16
+write$ -- 134
+(There were 6 error messages)
