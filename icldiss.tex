@@ -101,6 +101,11 @@ The techniques developed in this project could also be employed to solve perform
 
 \chapter*{Acknowledgement}
 
+I would like to thank my supervisor Professor Duncan Gillies for the supports, valuable comments and guidance he provided me throughout my project period.
+
+I also wish to thank Dr.James Rosindell for sharing me the manuscript of the website software as well as providing important advices and comments for the application.
+
+
 \makededication
 
 \tableofcontents
@@ -110,6 +115,14 @@ The techniques developed in this project could also be employed to solve perform
 \chapter{Introduction}
 
 \section{Background}
+
+\subsection{What is tree of life?}
+The tree of life links all biodiversity through a shared evolutionary history. \cite{emotiv}
+
+This project will produce the first online, comprehensive first-draft tree of all 1.8 million named species, accessible to both the public and scientific communities. Assembly of the tree will incorporate previously-published results, with strong collaborations between computational and empirical biologists to develop, test and improve methods of data synthesis. This initial tree of life will not be static; instead, we will develop tools for scientists to update and revise the tree as new data come in. Early release of the tree and tools will motivate data sharing and facilitate ongoing synthesis of knowledge.
+
+Our knowledge of the tree of life, a phylogenetic tree summarizing the evolutionary relationships among all life on Earth--is expanding rapidly. "Megatrees" with millions of tips (species) are expected to appear imminently. Unfortunately, there has so far been no practical and intuitive way to explore even the much smaller trees with thousands of tips that are now being routinely produced. Without a way to view megatrees, these wondrous objects, representing the culmination of decades of scientific effort, cannot be fully appreciated. The field really needs a solution to this problem to enable scientists to communicate important evolutionary concepts and data effectively, both to each other and to the general public.
+
 
 Visualising phylogenies is one of the fundamental tasks of evolutionary analysis. It has long been a great challenge to display huge trees. When the number of species on the tree increases to millions, no display is huge enough to display the whole tree while maintaining all metadata(e.g., name, population stability, conservation status) of each species. Even if a screen large enough is accessible, it is unpleasant for users to look for information on such a large screen. 
 
@@ -163,7 +176,7 @@ Building a tree from the string is just the opposite as building the tree. For i
 	"((A:1.5,B:1.5)C:2,D:3.5)E" =  "(" + "(A:1.5,B:1.5)C:2" + "," + "D:3.5" + ")" + "E"
 \end{center}
 
-Therefore, a node object E with two children will be built. Its first children need to be further initialised while its second children will be node D. For a larger dataset, building a tree follows the same steps. First create the node out of the outer bracket, then split the data inside the bracket into two parts and set each part to be one of the children of the outer node. Then continue initialising its children by the same steps.
+Therefore, a node object E with two children will be built. Its first children need to be further initialized while its second children will be node D. For a larger dataset, building a tree follows the same steps. First create the node out of the outer bracket, then split the data inside the bracket into two parts and set each part to be one of the children of the outer node. Then continue initialising its children by the same steps.
 
 Finally, for any Newick string, a binary tree starting from a root would be built. 
 
@@ -178,20 +191,22 @@ Besides redlist and population stability, the richness of link nodes are also st
 Another metadata that cannot be accessed directly from the raw data is the age of link nodes. The age of the root needs to be inferred from its children. Take the previous string as an example, the node hierarchy can be represented as below. The age of node C is 1.5 million years from either child A or B. While the age of node E is 3.5 million years from child C or D.
 
 \begin{center}
-\begin{tikzpicture}
-\node[circle,draw](z){E}
-  child{
-	node[circle, draw]{C}  
-		child{
-			node[circle,draw]{A}
-  			}
-  		child{
-  			node[circle,draw]{B}
-  			}
-  		}
-  child{
-    node[circle,draw]{D} 
-    };
+\begin{tikzpicture}[level distance=1.5cm,
+level 1/.style={sibling distance=3cm},
+level 2/.style={sibling distance=2cm}]
+\tikzstyle{every node}=[circle,draw]
+
+\node (Root)  {E}
+    child {
+    node {C}
+    child { node {A} edge from parent node[left,draw=none] {1}}
+    child { node {B} edge from parent node[right,draw=none] {1}}
+    edge from parent node[left,draw=none] {2.5}
+}
+child {
+    node {D} edge from parent node[right,draw=none] {3.5}
+};
+
 \end{tikzpicture}
 \end{center}
 
@@ -342,8 +357,6 @@ Take the largest tree released on the website tetrapods as an example. The data 
  
  Below are two tables gives comparison of total memory usage between different browsers and total memory usage right after initialization and a long time after initialization.
  
- Table 4.2 gives comparison of total memory usage between different browsers. Table 4.3 compares the memory usage right after initialization and a long time after initialization of different trees using Chrome.
- 
  \begin{table} [H]
 	\centering % used for centering table
 	\begin{tabular}{|c c c c|} % centered columns (4 columns)
@@ -460,7 +473,7 @@ The database also includes the id of both children. When the node pass the test,
   \label{fig:mammal}
 \end{figure}
 
-Again, because of memory size limitation, the application can't build a database containing all nodes. Instead, only for the nodes whose richness or whose parent richness is greater or equal to a threshold, the node information will be recorded in the database. For the nodes whose richness is smaller than the threshold, the start and end position of its data will represent itself plus both of its children. For the bacteria tree, the threshold is 500. The table of bacteria contains  19543 rows, which is about 2.5\% the total amount of nodes in the original bacteria raw data.
+Again, because of memory size limitation, the application can't build a database containing all nodes. Instead, only for the nodes whose richness or whose parent richness is greater or equal to a threshold, the node information will be recorded in the database. For the nodes whose richness is smaller than the threshold, the start and end position of its data will represent itself plus both of its children. For the bacteria tree, the threshold is 500. The table of bacteria contains  19543 rows, which is about 2.5\% the total amount of nodes in the original bacteria raw data. For the rest trees, the threshold is 50.
 
 In the following paragraph, the node in the database whose richness value is smaller than threshold will be called mini root node. When this node passes the test of displaying, the application will not continue build and test because it does not have enough information about its children. Instead, the application will continue building all of children directly from string. 
 
@@ -570,6 +583,33 @@ After calculating the possibility of nodes in running list, the running list wil
 \caption{Work flow of deleting nodes on the tree}
 \end{figure}
 
+\subsection{Result}
+
+While the application is running, the memory usage of the application is expected to increase as thread will initialize nodes during its idle time. More details can be seen in next chapter. The table below gives comparison of memory usage before and after optimization when the application starts.
+
+\begin{table} [H]
+	\centering % used for centering table
+	\begin{tabular}{|c c c c|} % centered columns (4 columns)
+		\hline %inserts double horizontal lines
+		Tree Name & Richness  & Before & After\\ % inserts table 
+		%heading
+		\hline  % inserts single horizontal line
+		Mammals & 5020 & 89Mb   & 86Mb\\  % inserting body of the table
+		\hline
+		Birds & 9993 &  95Mb & 86Mb\\
+		\hline
+		Tetrapods & 22822 & 104Mb & 86Mb\\ 
+		\hline %inserts single line
+		Bacteria & 408135 & N/A & 89Mb \\ [1ex] % [1ex] adds vertical space
+		\hline
+	\end{tabular}
+	\label{table:nonlin} % is used to refer this table in the text
+	\caption{Comparison of memory usage before and after optimization} % title of Table
+\end{table}
+
+The memory usage of the tree of mammals, birds and tetrapods are bigger than that in Chrome or Firefox because the application creates an object containing all raw data, a database and two bitmap used for solving performance issues, while all these are not used in the website software.
+
+The memory usage after optimization is almost not changed with the increase of richness of the tree. For the bacteria tree, the richness threshold is higher than that of other trees. Therefore, it is more likely to reach a mini root node and initialize all of its children during initialization. Hence, it has a higher memory usage than other trees.
 
 \chapter{Performance Issues}
 
@@ -596,12 +636,34 @@ Before the phylogenetic tree first gets drawn, the application needs to load dat
 		\hline
 	\end{tabular}
 	\label{table:nonlin} % is used to refer this table in the text
-	\caption{Loading Time on Android and website version before optimizing} % title of Table
+	\caption{Loading Time on Android and website version before memory and performance optimizing} % title of Table
 \end{table}
 
 In order to shorten the loading time, several bitmaps of different trees are stored as resources. When a user selects one of the tree, the corresponding bitmap would be drawn on canvas. In the meantime, another thread would be created to load data and do pre calculation. The main UI thread and the calculation thread share a flag by which the view object knows whether the pre calculation is done or not. When the pre calculation is on progress and the user drags or zooms on the tree, the view object will use the built in method of canvas class to scale or translate the stored bitmap. When pre calculation is finished, the calculation thread would send a message to the main UI thread so that it will invalidate the view by draw nodes.
 
 Essentially, in the previous design, users spend time waiting for the data to be loaded and calculated. In the later design, the tree is drawn using bitmap even before the tree is created. Therefore, from a user perspective, the loading time of any tree could be reduced to unnoticeable. 
+
+\begin{table} [H]
+	\centering % used for centering table
+	\begin{tabular}{|c c c c|} % centered columns (4 columns)
+		\hline %inserts double horizontal lines
+		Tree Name & Richness  & No optimization  & After optimization \\% inserts table 
+		%heading
+		\hline  % inserts single horizontal line
+		Mammals & 5020 & 1761ms & 398ms   \\  % inserting body of the table
+		\hline
+		Birds & 9993 & 3683ms & 393ms  \\
+		\hline
+		Tetrapods & 22822 & 8177ms & 405ms   \\ 
+		\hline %inserts single line
+		Bacteria & 408135 & N/A & 380ms  \\ [1ex] % [1ex] adds vertical space
+		\hline
+	\end{tabular}
+	\label{table:loadingCamparison} % is used to refer this table in the text
+	\caption{Result of loading time after optimizing in Android} % title of Table
+\end{table}
+
+From Table ~\ref{table:loadingCamparison} we can see that the cost of loading time is much smaller than that before optimization. Besides, the increase of the size of tree doesn't affect the length of loading time any more.
 
 \section{User Interaction}
 
@@ -759,23 +821,35 @@ There is one more thing needing to be tested for whether to use bitmap . When th
 In order to update the view by drawing nodes as soon as the user moves their fingers off the screen, the application would increase the threshold of displaying nodes when interaction begins. Therefore, less nodes would be added and drawn in the drawing list. It would shorten the time for recalculating as well as drawing. One second later the view is updated with high threshold, the view will send another recalculation message to another thread to calculate again with more details. If during this one second user interacts with the view, the result of this recalculation won't be drawn since the counter in view has been updated. If user has no interaction with the view, then after user could see the view being updated with more details. From a user perspective, he or she could get the view rapidly updated after their interaction with the view. Then one seconds later, more details would be drawn on the screen.
 
 
-\chapter{Conclusion}
+\chapter{Conclusion and future work}
+
+This chapter summarizes about the achievements of this project as well as a brief description for the possible future work.
+
+One of the major achievement of the project is solving memory handling issues. In the website software, the memory usage increases when the richness of species increases. When loading bacteria tree, Chrome crashes because of stack exceeding error and Firefox needs to allocate 340Mb. By selecting the nodes that are displayed in the current screen and by dynamically adding and deleting nodes, the application is able to display the tree as it is displayed on the website software, and at the same time, keeps the memory usage of the application below its limitation.
+
+Another major achievement is greatly reducing the loading time as well as user interaction response time. Loading time is reduced by drawing a pre stored bitmap before the tree is initialized. If users interacts during initialization, the application can translate and scale the bitmap to makes the user feel fluent. The essential idea of reducing response time is to load the calculation task into an assistant thread(calculation thread). When the user is interacting with the view, the assistant thread will add new nodes to be drawn, while the main UI thread will use a cached bitmap to give users a continuous display. When user interaction ends and the calculation thread finishes adding, the application will update the view by drawing nodes. The assistant thread not only adds nodes when user is interacting, it also initializes nodes when the thread is idle. This decreases the amount of work for the assistance thread when the user interacts with the view.
+
+A further work of the project includes adding the functionalities of the website software into the android application. Besides, it may also include adding the methodologies used in solving memory handling issues and performance issues into the website software. ~\cite{abramowitz}
 
 
-\begin{thebibliography}{123}
-\addcontentsline{toc}{chapter}{Bibliography}
-\raggedright
+%\begin{thebibliography}{123}
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\raggedright
 
-\bibitem{bibtex} It is more convinient and faster to use \texttt{bibtex} instead 
-of writing your bibliography manually.
+%\bibitem{bibtex} It is more convinient and faster to use \texttt{bibtex} instead 
+%of writing your bibliography manually.
 
-\bibitem{jabref}
-You can even use a tool like \texttt{jabref} to manage and maintain your 
-database of references.
+%\bibitem{jabref}
+%You can even use a tool like \texttt{jabref} to manage and maintain your 
+%database of references.
 
-\end{thebibliography}
+%\end{thebibliography}
+
+\bibliography{icldiss}{}
+\bibliographystyle{plain}
 
 \end{document}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %

@@ -1,6 +1,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{8}
 \contentsline {section}{\numberline {1.1}Background}{8}
-\contentsline {section}{\numberline {1.2}OneZoom Android Application}{9}
+\contentsline {subsection}{\numberline {1.1.1}What is tree of life?}{8}
+\contentsline {section}{\numberline {1.2}OneZoom Android Application}{10}
 \contentsline {section}{\numberline {1.3}Report outline}{10}
 \contentsline {chapter}{\numberline {2}OneZoom Website Software Introduction}{11}
 \contentsline {section}{\numberline {2.1}Data Processing}{11}
@@ -16,13 +17,13 @@
 \contentsline {section}{\numberline {4.2}Overview of the solution}{21}
 \contentsline {section}{\numberline {4.3}Creating a new data format}{24}
 \contentsline {section}{\numberline {4.4}Dynamic adding and deleting of nodes}{26}
+\contentsline {subsection}{\numberline {4.4.1}Result}{30}
 \contentsline {chapter}{\numberline {5}Performance Issues}{31}
 \contentsline {section}{\numberline {5.1}Loading Time}{31}
-\contentsline {section}{\numberline {5.2}User Interaction}{32}
+\contentsline {section}{\numberline {5.2}User Interaction}{33}
 \contentsline {subsection}{\numberline {5.2.1}Using thread and message queue to discard extra mouse move message}{33}
 \contentsline {subsection}{\numberline {5.2.2}Using idle thread to prepare nodes}{34}
 \contentsline {subsection}{\numberline {5.2.3}Using cached bitmap to update view before calculation is done}{35}
 \contentsline {subsection}{\numberline {5.2.4}Test use bitmap or do actual drawing}{37}
 \contentsline {subsection}{\numberline {5.2.5}Draw less detail first}{39}
-\contentsline {chapter}{\numberline {6}Conclusion}{41}
-\contentsline {chapter}{Bibliography}{42}
+\contentsline {chapter}{\numberline {6}Conclusion and future work}{41}
