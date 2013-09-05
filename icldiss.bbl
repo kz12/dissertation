@@ -1,10 +1,38 @@
 \begin{thebibliography}{1}
 
-\bibitem{abramowitz}
-Milton {Abramowitz} and Irene~A. {Stegun}.
-\newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and
-  Mathematical Tables}.
-\newblock Dover, New York, ninth dover printing, tenth gpo printing edition,
-  1964.
+\bibitem{treeOfLifeDefine}
+\url{http://en.wikipedia.org/wiki/Tree_of_life_(biology)#The_tree_of_life_today}.
+
+\bibitem{phylogeneticTree}
+\url{http://en.wikipedia.org/wiki/Phylogenetic_tree}.
+
+\bibitem{oneZoomWebsite}
+\url{http://www.onezoom.org}.
+
+\bibitem{euclidean}
+Roderic D.M.
+\newblock Space, time, form: viewing the tree of life.
+\newblock {\em Trends in Ecology and Evolution}, 27(2), February 2012.
+
+\bibitem{multipleMonitoring2}
+P.A. Goloboff.
+\newblock Phylogenetic analysis of 73 060 taxa corroborates major eukaryotic
+  groups.
+\newblock {\em Cladistics}, 25:211--230, June 2009.
+
+\bibitem{fractalBook}
+Jean-Francois Gouyet.
+\newblock {\em Physics and Fractal Structures}.
+\newblock Springer-Verlag New York Inc, May 1996.
+
+\bibitem{multipleMonitoring}
+E.~Pennisi.
+\newblock Modernizing the tree of life.
+\newblock {\em Science}, 300(5626):1692--1697, June 2003.
+
+\bibitem{oneZoom}
+J.~Rosindell and L.~J. Harmon.
+\newblock Onezoom: A fractal explorer for the tree of life.
+\newblock {\em PLOS Biology}, October 2012.
 
 \end{thebibliography}

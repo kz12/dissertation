@@ -39,6 +39,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{url}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -60,7 +61,7 @@
   tabsize=3
 }
 
-\title{Tree of Life Visualisation \\ By}
+\title{Tree of life visualization \\ By}
 \author{Kai Zhong(kz12)}
 
 
@@ -117,20 +118,63 @@ I also wish to thank Dr.James Rosindell for sharing me the manuscript of the web
 \section{Background}
 
 \subsection{What is tree of life?}
-The tree of life links all biodiversity through a shared evolutionary history. \cite{emotiv}
-
-This project will produce the first online, comprehensive first-draft tree of all 1.8 million named species, accessible to both the public and scientific communities. Assembly of the tree will incorporate previously-published results, with strong collaborations between computational and empirical biologists to develop, test and improve methods of data synthesis. This initial tree of life will not be static; instead, we will develop tools for scientists to update and revise the tree as new data come in. Early release of the tree and tools will motivate data sharing and facilitate ongoing synthesis of knowledge.
-
-Our knowledge of the tree of life, a phylogenetic tree summarizing the evolutionary relationships among all life on Earth--is expanding rapidly. "Megatrees" with millions of tips (species) are expected to appear imminently. Unfortunately, there has so far been no practical and intuitive way to explore even the much smaller trees with thousands of tips that are now being routinely produced. Without a way to view megatrees, these wondrous objects, representing the culmination of decades of scientific effort, cannot be fully appreciated. The field really needs a solution to this problem to enable scientists to communicate important evolutionary concepts and data effectively, both to each other and to the general public.
+The tree of life, a 200-year-old concept,  is a metaphor used to describe the relationships between both living and extinct organisms. One of its influential application was made by Charles Darwin. He employed the concept to describe the process of how different varieties and species envovled  from common ancestors. Ernst Haeckel went further by proposing phylogenic histories of life to illustrate relationships of species over time. The tree of life is now called the phylogenetic tree or evolutionary tree in this sense. ~\cite{treeOfLifeDefine} ~\cite{phylogeneticTree}
 
 
-Visualising phylogenies is one of the fundamental tasks of evolutionary analysis. It has long been a great challenge to display huge trees. When the number of species on the tree increases to millions, no display is huge enough to display the whole tree while maintaining all metadata(e.g., name, population stability, conservation status) of each species. Even if a screen large enough is accessible, it is unpleasant for users to look for information on such a large screen. 
+The tree of life can work as a useful tool in biology research. Biological research of all kinds, no matter it is ecological health, environmental change or human disease depends on understanding the relationships between different species. ~\cite{treeOfLifeDefine} Therefore, it is necessary to provide scientists a useful way to visualize the tree of life.
 
-One way to solve this issue is the interactive fractal-inspired graph(IFIG), which includes all species as well as all their metadata. The key concept of the IFIG method is to place all the data on one page such that users could navigate between different scales by simply zooming in and out (http://www.onezoom.org). Therefore, users can't see all information of all species at one time. Instead, when the scale is big enough, users could see the whole picture of the tree of life but with few details of each species. When users zoom into the tree, more details of the selected area will be displayed while other species might go out of the screen.
+\subsection{Traditional way to visualize the tree of life}
 
-The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns)(TODO: add reference). Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.(reference) The hierarchical dataset is represented by using fractals. Fractals are typically self similar patterns, where self similar means they are "the same from near as from far". This means the shapes of branches and nodes remains similar at different scales of zoom.(TODO: add reference) Hence, it could ensure the amount of visual elements on a screen remains relatively constant. Moreover, fractals simplify the representation of huge hierarchical dataset. All levels of data are represented in the same way. So inserting or deleting data can be automatically adopted by the software in the tree representation.
+This section discusses the traditional methods for tree of life visualization and the reason why they are not appreciated for displaying huge tree of life.
 
-TODO: Duncan suggested to add more background about previous weak and perhaps something more on fractals and self similarity. Besides, Duncan also suggested to add some background about android development environment.
+\begin{itemize}
+  \item Euclidean drawing
+ 
+ A two-dimension euclidean drawing is the most common method to represent phylogeny. Typically phylogenies are represented as trees(Please see Figure ~\ref{fig:eucdeanDrawing}). Though simple and clear is euclidean drawing, it is difficult to draw very huge trees with the restriction of the screen size or paper size.
+  
+\begin{figure}[H]
+  \centering
+  \includegraphics [width=10cm,height=6.8cm]{EuclideanDrawing}
+  \caption{Euclidean Drawing}
+  \label{fig:eucdeanDrawing}
+\end{figure}
+  
+  One way is to collapse nodes to save space. The choice of which node to collapse depends on the user's interest or could be done automatically, for instance, when given an introduction navigation.~\cite{euclidean} By collapsing and expanding the nodes, a user can navigate force and back between different biological level. At the same time, as all information a user not interested in is folded by the user,the visual elements can keep relatively constant at the selected level. Hence, this method provides a reasonable solution for drawing a huge hierarchy data set visualization.
+  
+However, this method is not without is drawbacks. One disadvantage is that navigating between different level of scale is not convenient. For example, if the user is currently viewing human beings and he or she wants to move back to see the whole tree, then an implementation of this method might need the user to move their mouses on the collapse button for several times. Apparently, this method is much less user friendly when compared with the IFIG method, which requires only zoom out to do the same work.
+
+  \item Multi-monitors
+  As the name suggested, multi-monitors use multiple monitors in order to make the screen big enough for displaying very large images. The 2003 special issue of Science devoted to the tree of life included a 3,000-taxa tree that was best viewed when enlarged to a 1.5-meter diameter.~\cite{multipleMonitoring} Today, phylogenies with tens of thousands of taxa are being published~\cite{multipleMonitoring2}, pushing the limits of what existing software can display. One of the strategy to solve the display problem is to use multiple monitors to make up of a screen large enough to display the whole tree(Please see Figure ~\ref{fig:multipleMonitoring} ).
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics [width=10cm,height=6.8cm]{MultipleMonitoring}
+  \caption{Using multiple monitor to display tree of life}
+  \label{fig:multipleMonitoring}
+\end{figure}
+  
+  As we can see, this method is very intuitive, but also has very obvious disadvantages. Most important of all is the high expense on screens. Nowadays, the amount of species known is above several millions. If we expect to draw all species in one picture, then the number of monitors may increase to thousands. Hence the cost on monitors can be huge. Not only the cost, but the space needed to place those monitors is highly impossible to cater.
+  
+  \item Hyperbolic viewers
+  The hyperbolic viewer would keep the tree unchanged, but instead distort the space in which the tree is displayed.~\cite{euclidean} The main idea of the method is to focus on the part of the tree the user interest in and squish other parts of the tree so that they can be displayed in a single screen. However, this approach is not highly appreciated by users since they find them hard to navigate(Please see Figure ~\ref{fig:Hyperbolic}).
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics [width=10cm,height=6.8cm]{Hyperbolic}
+  \caption{2D/3D Hyperbolic view}
+  \label{fig:Hyperbolic}
+\end{figure}
+
+\end{itemize}
+
+
+\subsection{Interactive fractal-inspired graph}
+
+As the previous section discussed, traditional methods face many problems when dealing with huge tree of life. One way to solve these issues is the interactive fractal-inspired graph(IFIG), which includes all species as well as all their metadata. 
+
+The key concept of the IFIG method is to place all the data on one page such that users could navigate between different scales by simply zooming in and out.~\cite{oneZoomWebsite} Therefore, users can't see all information of all species at one time. Instead, when the scale is big enough, users could see the whole picture of the tree of life but with few details of each species. When users zoom into the tree, more details of the selected area will be displayed while other species might go out of the screen.
+
+The interface of the OneZoom is analogous to Google Earth. When using google earth, one can find a location by zooming from a start page of the whole globe, recognizing familiar landmarks at different scales along the way(e.g., continents, countries, regions, and towns).~\cite{oneZoom} Equivalently, OneZoom enables the user to zoom smoothly to the species they want to find. For example, one can find human beings by zooming in along the clades of animals, vertebrates, mammals and primates.~\cite{oneZoom} The hierarchical dataset is represented by using fractals. Fractals are typically self similar patterns, where self similar means they are "the same from near as from far". This means the shapes of branches and nodes remains similar at different scales of zoom.~\cite{fractalBook} Hence, it could ensure the amount of visual elements on a screen remains relatively constant. Moreover, fractals simplify the representation of huge hierarchical dataset. All levels of data are represented in the same way. So inserting or deleting data can be automatically adopted by the software in the tree representation.
 
 
 
@@ -275,8 +319,7 @@ For example, in the figure of the tree of mammals, one branch is covered by a si
 
 This chapter will describe changes of implementation from the website software to android application. More details concerning how to improve the performance of the software and how to break the memory limitation for larger trees will be discussed in Chapter 4 and Chapter 5.
 
-\section{ }
-
+\section{Create subclass for link node and leaf node}
 
 The website software use one class representing both link node and leaf node. Instead of using only one class, this application uses the original node class as a super class that takes charge of how to calculate positions of a node, how to get information of a node, and LeafNode, CircleNode(link node) as subclasses of the original class that take charge of how to draw themselves. Basically, the tree contains two type of nodes, one is the node with children nodes, the other is the node without any children. The nodes with children will create CircleNode objects, while the other ones will create LeafNode objects. 
 
@@ -718,26 +761,25 @@ In order to reduce the response time, the extra finger move messages should be d
 
 The calculation thread is active when the user starts interacting with the view. The time users waiting for the view to draw nodes are decided by how long the thread would take to add new nodes. An improvement has been made by using the idle time of the calculation thread to allocate memories for the nodes that are likely being built in the following user interaction. 
 
-Adding new nodes during idle time is very similar to deleting unused nodes. After adding new nodes, if there enough memory, the application will send message calling the calculation thread to calculate the possibility of the nodes in the non initialization list. It is followed by sorting these nodes according to their possibility. Then move the node from non initialization list to running list and check whether its richness is smaller than the richness threshold(500 for bacteria tree). If it is, then the node is a mini root so create all of its children, otherwise build its direct children and add both children to non initialization tree. 
+Adding new nodes during idle time is very similar to deleting unused nodes. After adding new nodes, the application will send message calling the calculation thread to calculate the possibility of the nodes both in the non initialization list and in the running list. If there are recalculate message in message queue, the thread will be switched to handle it. Otherwise, it will test if there are enough space. If there enough memory, the application will sort nodes in non initialization list by their possibility. Then move the node from non initialization list to running list and check whether its richness is smaller than the richness threshold(500 for bacteria tree). If it is, then the node is a mini root so create all of its children, otherwise build its direct children and add both children to non initialization tree. If there is no enough space, the thread will delete nodes in the running list whose possibility is lower than the highest possibility in non initialization list. The amount of nodes being deleted will be smaller than 1,000.
 
 This is one cycle of allocating new nodes during idle time. When the cycle ends, the thread will send another idle calculation message. If the thread does not have recalculation message and there are enough space, then the cycle will be gone through again and one more idle calculation message will be generated. Otherwise, the idle calculation will terminate and be reactive after next user interaction.
 
  \begin{figure}[H]
  \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
-    \node [block] (term1) {Terminate};
-    \node [block, below of=term1, node distance = 3.5cm](term2) {Terminate};
+    \node [block] (term1) {Delete nodes from running list};
     \node [decision, right of=term1, node distance=5.5cm] (test) {Recalculation in Message Queue?};
-    \node [decision, below of=test, node distance = 3.5cm] (test2) {Enough memory?};
+    \node [decision, below of=test, node distance = 4cm] (test2) {Enough memory?};
     \node [block, right of=test2, node distance = 5.5cm] (sort) {Sort non initialization list};
-    \node [block, above of=sort, node distance = 3.5cm] (build) {Initialize one node from non initialization list};    
-    \node [block, above of=test, node distance =3.5cm] (poss) {Calc possibility in non initialization list};
+    \node [block, above of=sort, node distance = 4cm] (build) {Initialize one node from non initialization list};    
+    \node [block, above of=test, node distance =3.5cm] (poss) {Calculate possibility};
     \node [block, above of=term1, node distance = 3.5cm] (recalc) {Recalculation Finish};
   
    
     %Draw edges
-    \path [line] (test) -- node[red] {Yes}(term1);
-    \path [line] (test2) -- node[red] {No}(term2);
+    \path [line] (test2) -| node[red, near start] {No}(term1);
+    \path [line] (term1) -- (test);
     \path [line] (recalc) -- (poss);
     \path [line] (poss) -- node[red] {Send Message} (test);
     \path [line] (test) -- node[red] {No}(test2);
@@ -829,7 +871,7 @@ One of the major achievement of the project is solving memory handling issues. I
 
 Another major achievement is greatly reducing the loading time as well as user interaction response time. Loading time is reduced by drawing a pre stored bitmap before the tree is initialized. If users interacts during initialization, the application can translate and scale the bitmap to makes the user feel fluent. The essential idea of reducing response time is to load the calculation task into an assistant thread(calculation thread). When the user is interacting with the view, the assistant thread will add new nodes to be drawn, while the main UI thread will use a cached bitmap to give users a continuous display. When user interaction ends and the calculation thread finishes adding, the application will update the view by drawing nodes. The assistant thread not only adds nodes when user is interacting, it also initializes nodes when the thread is idle. This decreases the amount of work for the assistance thread when the user interacts with the view.
 
-A further work of the project includes adding the functionalities of the website software into the android application. Besides, it may also include adding the methodologies used in solving memory handling issues and performance issues into the website software. ~\cite{abramowitz}
+A further work of the project includes adding the functionalities of the website software into the android application. Besides, it may also include adding the methodologies used in solving memory handling issues and performance issues into the website software.
 
 
 %\begin{thebibliography}{123}

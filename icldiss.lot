@@ -2,11 +2,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Heap usage of tree with different amount of species in Chrome\relax }}{19}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Memory usage of different trees between Chrome and Firefox\relax }}{21}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Memory usage of different trees between right after initialization and a long time after initialization in Chrome \relax }}{21}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Comparison of memory usage before and after optimization\relax }}{30}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Heap usage of tree with different amount of species in Chrome\relax }}{22}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Memory usage of different trees between Chrome and Firefox\relax }}{24}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Memory usage of different trees between right after initialization and a long time after initialization in Chrome \relax }}{24}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Comparison of memory usage before and after optimization\relax }}{33}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Loading Time on Android and website version before memory and performance optimizing\relax }}{32}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Result of loading time after optimizing in Android\relax }}{32}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Loading Time on Android and website version before memory and performance optimizing\relax }}{35}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Result of loading time after optimizing in Android\relax }}{35}
 \addvspace {10\p@ }

@@ -3,46 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: icldiss.aux
 The style file: plain.bst
 Database file #1: icldiss.bib
-Warning--I didn't find a database entry for "emotiv"
-You've used 1 entry,
+Warning--to sort, need author or key in treeOfLifeDefine
+Warning--to sort, need author or key in phylogeneticTree
+Warning--to sort, need author or key in oneZoomWebsite
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            504 strings with 4182 characters,
-and the built_in function-call counts, 283 in all, are:
-= -- 25
-> -- 13
+            539 strings with 4797 characters,
+and the built_in function-call counts, 1752 in all, are:
+= -- 168
+> -- 44
 < -- 0
-+ -- 5
-- -- 4
-* -- 17
-:= -- 55
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 5
++ -- 20
+- -- 12
+* -- 102
+:= -- 274
+add.period$ -- 18
+call.type$ -- 8
+change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 12
-empty$ -- 23
-format.name$ -- 4
-if$ -- 57
+cite$ -- 11
+duplicate$ -- 75
+empty$ -- 182
+format.name$ -- 12
+if$ -- 377
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 7
+int.to.str$ -- 8
+missing$ -- 6
+newline$ -- 37
+num.names$ -- 10
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 22
 quote$ -- 0
-skip$ -- 7
+skip$ -- 63
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 96
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2
-warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 14
-(There was 1 warning)
+type$ -- 30
+warning$ -- 3
+while$ -- 14
+width$ -- 9
+write$ -- 70
+(There were 3 warnings)

@@ -1,22 +1,25 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Euclidean Drawing\relax }}{9}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Using multiple monitor to display tree of life\relax }}{10}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces 2D/3D Hyperbolic view\relax }}{11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Tree of Mammals\relax }}{15}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tree of Rodents: Zoom In to the Rodent Branch\relax }}{16}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Zoom In the to Mouse Like Rodents Branch\relax }}{16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Tree of Mammals\relax }}{18}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Tree of Rodents: Zoom In to the Rodent Branch\relax }}{19}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Zoom In the to Mouse Like Rodents Branch\relax }}{19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Work flow of building part of the tree\relax }}{22}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Using Bouding Box to select branch\relax }}{23}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Bounding box of child1 and child2 of root\relax }}{24}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Database columns\relax }}{25}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Work flow of adding nodes on the tree\relax }}{27}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Possibility with distance\relax }}{29}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Possibility with size\relax }}{29}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Work flow of deleting nodes on the tree\relax }}{30}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Work flow of building part of the tree\relax }}{25}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Using Bouding Box to select branch\relax }}{26}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Bounding box of child1 and child2 of root\relax }}{27}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Database columns\relax }}{28}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Work flow of adding nodes on the tree\relax }}{30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Possibility with distance\relax }}{32}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Possibility with size\relax }}{32}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Work flow of deleting nodes on the tree\relax }}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Previous working flow of main UI thread\relax }}{33}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces How recalculation thread deals with message\relax }}{34}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Calculation during idle time\relax }}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces How to update view\relax }}{37}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces How to test whether toWhen the amount of species on the tree When the amount of species on the tree use bitmap to redraw\relax }}{39}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Previous working flow of main UI thread\relax }}{36}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces How recalculation thread deals with message\relax }}{37}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Calculation during idle time\relax }}{38}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces How to update view\relax }}{40}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces How to test whether toWhen the amount of species on the tree When the amount of species on the tree use bitmap to redraw\relax }}{42}
 \addvspace {10\p@ }
