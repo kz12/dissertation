@@ -1,32 +1,34 @@
-\contentsline {chapter}{\numberline {1}Introduction}{8}
-\contentsline {section}{\numberline {1.1}Background}{8}
-\contentsline {subsection}{\numberline {1.1.1}What is tree of life}{8}
-\contentsline {subsection}{\numberline {1.1.2}Traditional way to visualize the tree of life}{8}
-\contentsline {subsection}{\numberline {1.1.3}Interactive fractal-inspired graph}{11}
-\contentsline {section}{\numberline {1.2}OneZoom Android Application}{13}
-\contentsline {section}{\numberline {1.3}Report outline}{13}
-\contentsline {chapter}{\numberline {2}OneZoom Website Software}{15}
-\contentsline {section}{\numberline {2.1}Data processing}{15}
-\contentsline {subsection}{\numberline {2.1.1}Raw data format}{15}
-\contentsline {subsection}{\numberline {2.1.2}Node object}{16}
-\contentsline {section}{\numberline {2.2}Ways to decrease the amount of elements being drawn}{17}
-\contentsline {section}{\numberline {2.3}Software work flow}{18}
-\contentsline {section}{\numberline {2.4}How to use the software}{18}
-\contentsline {chapter}{\numberline {3}OneZoom Android Application}{21}
-\contentsline {section}{\numberline {3.1}Create subclass for link node and leaf node}{21}
-\contentsline {section}{\numberline {3.2}User Operation Listener}{21}
-\contentsline {chapter}{\numberline {4}Memory Handling Issues}{23}
-\contentsline {section}{\numberline {4.1}Problem description}{23}
-\contentsline {section}{\numberline {4.2}Overview of the solution}{25}
-\contentsline {section}{\numberline {4.3}Creating a new data format}{28}
-\contentsline {section}{\numberline {4.4}Dynamic adding and deleting of nodes}{29}
-\contentsline {subsection}{\numberline {4.4.1}Result}{34}
-\contentsline {chapter}{\numberline {5}Performance Issues}{35}
-\contentsline {section}{\numberline {5.1}Loading Time}{35}
-\contentsline {section}{\numberline {5.2}User Interaction}{37}
-\contentsline {subsection}{\numberline {5.2.1}Using thread and message queue to discard extra mouse move message}{37}
-\contentsline {subsection}{\numberline {5.2.2}Using idle thread to prepare nodes}{38}
-\contentsline {subsection}{\numberline {5.2.3}Using cached bitmap to update view before calculation is done}{40}
-\contentsline {subsection}{\numberline {5.2.4}Test use bitmap or do actual drawing}{41}
-\contentsline {subsection}{\numberline {5.2.5}Draw less detail first}{43}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{45}
+\contentsline {chapter}{\numberline {1}Introduction}{7}
+\contentsline {section}{\numberline {1.1}Background}{7}
+\contentsline {subsection}{\numberline {1.1.1}What is tree of life}{7}
+\contentsline {subsection}{\numberline {1.1.2}Traditional way to visualize the tree of life}{7}
+\contentsline {subsection}{\numberline {1.1.3}Interactive fractal-inspired graph}{9}
+\contentsline {section}{\numberline {1.2}OneZoom Android Application}{11}
+\contentsline {section}{\numberline {1.3}Report outline}{11}
+\contentsline {chapter}{\numberline {2}OneZoom Website Software}{12}
+\contentsline {section}{\numberline {2.1}Data processing}{12}
+\contentsline {subsection}{\numberline {2.1.1}Raw data format}{12}
+\contentsline {subsection}{\numberline {2.1.2}Node object}{13}
+\contentsline {section}{\numberline {2.2}Ways to decrease the amount of elements being drawn}{13}
+\contentsline {section}{\numberline {2.3}Software work flow}{14}
+\contentsline {section}{\numberline {2.4}How to use the software}{14}
+\contentsline {chapter}{\numberline {3}OneZoom Android Application}{17}
+\contentsline {section}{\numberline {3.1}Create subclass for link node and leaf node}{17}
+\contentsline {section}{\numberline {3.2}User Operation Listener}{17}
+\contentsline {chapter}{\numberline {4}Memory Handling Issues}{19}
+\contentsline {section}{\numberline {4.1}Problem description}{19}
+\contentsline {section}{\numberline {4.2}Overview of the solution}{20}
+\contentsline {section}{\numberline {4.3}Creating a new data format}{23}
+\contentsline {section}{\numberline {4.4}Dynamic adding and deleting of nodes}{24}
+\contentsline {section}{\numberline {4.5}Result}{27}
+\contentsline {chapter}{\numberline {5}Performance Issues}{28}
+\contentsline {section}{\numberline {5.1}Loading Time}{28}
+\contentsline {subsection}{\numberline {5.1.1}Optimization result}{29}
+\contentsline {section}{\numberline {5.2}User Interaction}{29}
+\contentsline {subsection}{\numberline {5.2.1}Using thread and message queue to discard extra mouse move message}{29}
+\contentsline {subsection}{\numberline {5.2.2}Using idle thread to prepare nodes}{30}
+\contentsline {subsection}{\numberline {5.2.3}Using cached bitmap to update view before calculation is done}{31}
+\contentsline {subsection}{\numberline {5.2.4}Test use bitmap or do actual drawing}{32}
+\contentsline {subsection}{\numberline {5.2.5}Avoid duplicate drawing nodes}{33}
+\contentsline {subsection}{\numberline {5.2.6}Draw less details first}{35}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{37}

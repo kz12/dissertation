@@ -24,8 +24,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[MSc]{icldt}
-
+%\documentclass[MSc]{icldt}
+\documentclass[a4paper,11pt,twoside]{report}
+\usepackage[left=2.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{parskip}
 \usepackage{amsmath}
 \usepackage[latin1]{inputenc}
@@ -61,27 +62,50 @@
   tabsize=3
 }
 
-\title{Tree of Life Visualization \\ By}
-\author{Kai Zhong(kz12)}
+
+%\title{Tree of Life Visualization \\ By}
+%\author{Kai Zhong(kz12)}
 
 
 % Please specify you department here.
-\department{Computing}
+%\department{Computing}
 
 % The college regulations do not require that you mention 
 % your supervisor on the titlepage of you dissertation.
 % If you want to do so put her name here.
-\supervisor{}
+%\supervisor{}
 % The college regulations do neither require nor forbid 
 % a dedication of your dissertation to somebody or something. 
 % If you want to include a dedication put the text here. 
-\dedication{}
+%\dedication{}
 
-\date{September 2013}
+%\date{September 2013}
 
 \begin{document}
+\begin{titlepage}
+\begin{center}
 
-\maketitle
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+
+\textbf{\large Imperial College London}\\[0.5cm]
+
+\textbf{\large Department of Computing}\\[10cm]
+
+
+\textbf{\large Tree of Life Visualization}\\[0.5cm]
+\textbf{\large By }\\[0.5cm]
+\textbf{\large Kai Zhong(kz12) } \\[10cm]
+
+\textbf{Submitted in partial fulfilment of the requirements for the MSc Degree in Computing Science of Imperial College London}
+\vfill
+
+% Bottom of the page
+\textbf{\large September, 2013}
+
+\end{center}
+\end{titlepage}
+%\maketitle
 
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
     text width=5.5em, text badly centered, node distance=3cm, inner sep=0pt]
@@ -91,14 +115,14 @@
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
     minimum height=2em]
     
-\begin{abstract}
+\chapter*{Abstract}
 
 The storage, searching and visualisation of big data has become an increasingly important issue in computer science. One technique for visualisation of huge hierarchies is the interactive fractal inspired graph(IFIG), which employs fractal geometry to place limitless amounts of information on a single page and show,or  hide information by the simple actions of zooming and panning. This method has been employed for tree of life visualisation where it solved a significant outstanding problem in evolutionary biology: how can large evolutionary trees be visualised effectively for science, education and public outreach.
 
 While the pre-existing software runs on javascript and html5, the object of this project is to develop an android application based on this code. Compared with a personal computer, the calculation ability of a mobile device is relatively low and the RAM capability is more restricted. The project develops a multi threaded method with cached bitmaps to solve the performance issue. This greatly shortens the loading time as well as the response time of user interaction. When dealing with larger trees, because of the limitation of RAM, dynamical loading and freeing of objects is employed in this project, such that the usage of RAM could be maintained under the limitation of an android application. 
 The techniques developed in this project could also be employed to solve performance issues in the website software.
 
-\end{abstract}
+
 
 \chapter*{Acknowledgement}
 
@@ -107,7 +131,7 @@ I would like to thank my supervisor Professor Duncan Gillies for the supports, v
 I also wish to thank Dr.James Rosindell for sharing me the manuscript of the website software as well as providing important advices and comments for this project.
 
 
-\makededication
+%\makededication
 
 \tableofcontents
 \listoftables
@@ -180,7 +204,7 @@ The interface of the OneZoom is analogous to Google Earth. When using google ear
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=10cm,height=6.8cm]{oneZoomExample}
+  \includegraphics [width=15cm,height=8.8cm]{oneZoomExample}
   \caption{An example IFIG of a 408,135-tip phylogeny of small-subunit RNAs using data from SILVA}
   \label{fig:oneZoomExample}
 \end{figure}
@@ -293,9 +317,9 @@ When pre calculation is over, the software will call a method to update the view
     % Place nodes
     \node [block] (drawLoading) {Displaying Loading};
     \node [block, below of=drawLoading, node distance = 4cm] (load) {Loading and Pre Calculating};
-    \node [block, right of=load, node distance = 4.7cm](update) {Update View};
-    \node [block, right of=drawLoading, node distance = 4.7cm] (view) {Displaying Tree};
-    \node [block, right of =view, node distance = 4.7cm](operation){Drag or Zoom};
+    \node [block, right of=load, node distance = 6cm](update) {Update View};
+    \node [block, right of=drawLoading, node distance = 6cm] (view) {Displaying Tree};
+    \node [block, right of =view, node distance = 6cm](operation){Drag or Zoom};
     \node [block, below of=operation, node distance = 4cm](setting){Recalculation or Set Parameters};
     %Draw edges
     \path [line] (drawLoading) -- (load);
@@ -314,21 +338,21 @@ For example, in Figure \ref{fig:mammal}, one branch is covered by a signpost rod
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{Mammal}
+  \includegraphics [width=15cm,height=8.8cm]{Mammal}
   \caption{Tree of Mammals}
   \label{fig:mammal}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{Rodent}
+  \includegraphics [width=15cm,height=8.8cm]{Rodent}
   \caption{Tree of Rodents: Zoom In to the Rodent Branch}
   \label{fig:rodent}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{MouseLikeRodent}
+  \includegraphics [width=15cm,height=8.8cm]{MouseLikeRodent}
   \caption{Zoom In the to Mouse Like Rodents Branch}
   \label{fig:mouseLikeRodent}
 \end{figure}
@@ -336,6 +360,7 @@ For example, in Figure \ref{fig:mammal}, one branch is covered by a signpost rod
 \chapter{OneZoom Android Application}
 
 This chapter describes changes of implementation from the website software to android application. More details concerning how to improve the performance of the software and how to break the memory limitation for larger trees will be discussed in Chapter 4 and Chapter 5.
+
 
 \section{Create subclass for link node and leaf node}
 
@@ -468,8 +493,8 @@ When the application starts or when the user interacts with view, the applicatio
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (child1) {node = child1};
-    \node [decision, right of=child1, node distance = 4.7cm] (test2) {$size > threshold$};
-    \node [block, right of=test2, node distance = 4.7cm] (child2) {node = child2};
+    \node [decision, right of=child1, node distance = 6cm] (test2) {$size > threshold$};
+    \node [block, right of=test2, node distance = 6cm] (child2) {node = child2};
     \node [decision, above of=test2, node distance = 3.9cm] (test1) {inside screen};
     \node [block, above of=test1, node distance = 3.5cm] (build) {build node};
     \node [block, above of=build, node distance = 3cm] (root) {node = root};
@@ -489,7 +514,7 @@ Suppose the screen area is the yellow box in Figure~\ref{fig:screenAndBounding1}
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{ScreenAndBounding1}
+  \includegraphics [width=15cm,height=8.8cm]{ScreenAndBounding1}
   \caption{Using Bouding Box to select branch}
   \label{fig:screenAndBounding1}
 \end{figure}
@@ -498,7 +523,7 @@ In Figure~\ref{fig:screenAndBounding2}, the bounding box of child1(blue box) is 
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{ScreenAndBounding2}
+  \includegraphics [width=15cm,height=8.8cm]{ScreenAndBounding2}
   \caption{Bounding box of child1 and child2 of root}
   \label{fig:screenAndBounding2}
 \end{figure}
@@ -529,7 +554,7 @@ The database also includes the id of both children. When the node pass the test,
 
 \begin{figure}[H]
   \centering
-  \includegraphics [width=12.5cm,height=7.4cm]{Database}
+  \includegraphics [width=15cm,height=8.8cm]{Database}
   \caption{Database columns}
 \end{figure}
 
@@ -551,16 +576,16 @@ If the test result is 0, the recalculation should stop here. Otherwise if the re
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (children) {node = child1 node = child2};
-    \node [decision, right of=children, node distance = 4.7cm] (threshold) {$richness < threshold$};
-    \node [block, right of=threshold, node distance = 4.7cm] (build) {Build all children of mini root};
+    \node [decision, right of=children, node distance = 6cm] (threshold) {$richness < threshold$};
+    \node [block, right of=threshold, node distance = 6cm] (build) {Build all children of mini root};
     \node [decision, above of=threshold, node distance = 3.3cm] (leaf) {$richness=1$};
     \node [block, above of=leaf, node distance = 3cm] (add) {add node to running list};
     \node [block, above of=add, node distance = 2.5cm] (remove) {remove node from non initialization list};
     \node [decision, above of=remove, node distance = 3cm] (test) {display node?};
     \node [block, above of=test, node distance = 3cm] (root) {node = root};
-    \node [decision, right of=test, node distance = 4.7cm] (inRunning) {node in running list?};
+    \node [decision, right of=test, node distance = 6cm] (inRunning) {node in running list?};
     \node [block, below of=inRunning, node distance = 3.5cm] (add2) {add node to non initialization list}; 
-    \node [block, right of=leaf, node distance = 4.7cm] (end2) {end};
+    \node [block, right of=leaf, node distance = 6cm] (end2) {end};
 
 
     %Draw edges
@@ -629,21 +654,21 @@ After calculating the possibility of nodes in running list, the running list wil
 \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (recalculation) {Recalculation};
-    \node [block, right of=recalculation, node distance = 4.7cm] (poss) {Calculate Possibility};
-    \node [block, right of=poss, node distance = 4.7cm] (sort) {Sort running list};
+    \node [block, right of=recalculation, node distance = 6cm] (poss) {Calculate Possibility};
+    \node [block, right of=poss, node distance = 6cm] (sort) {Sort running list};
     \node [decision, below of=sort, node distance = 2.7cm] (space) {$memory < 10 Mb$};
-    \node [block, left of=space, node distance = 4.7cm] (remove) {Remove 1st node \& its children from running list};    
+    \node [block, left of=space, node distance = 6cm] (remove) {Remove 1st node \& its children from running list};    
     %Draw edges
     \path [line] (recalculation) -- (poss);
     \path [line] (poss) -- (sort);
     \path [line] (sort) -- (space);
-	\draw [->] (6.4,-2.4) -- (8.2,-2.4);
-	\draw [->] (8.2,-3.0) -- (6.4,-3.0);
+	\draw [->] (7.7,-2.4) -- (10.8,-2.4);
+	\draw [->] (10.8,-3.0) -- (7.7,-3.0);
 \end{tikzpicture}
 \caption{Work flow of deleting nodes on the tree}
 \end{figure}
 
-\subsection{Result}
+\section{Result}
 
 While the application is running, the memory usage of the application is expected to increase as thread will initialize nodes during its idle time. More details can be seen in next chapter. The table below gives comparison of memory usage before and after optimization when the application starts.
 
@@ -703,6 +728,9 @@ In order to shorten the loading time, several bitmaps of different trees are sto
 
 Essentially, in the previous design, users spend time waiting for the data to be loaded and calculated. In the later design, the tree is drawn using bitmap even before the tree is created. Therefore, from a user perspective, the loading time of any tree could be reduced to unnoticeable. 
 
+
+\subsection{Optimization result}
+
 \begin{table} [H]
 	\centering % used for centering table
 	\begin{tabular}{|c c c c|} % centered columns (4 columns)
@@ -719,11 +747,12 @@ Essentially, in the previous design, users spend time waiting for the data to be
 		Bacteria & 408135 & N/A & 380ms  \\ [1ex] % [1ex] adds vertical space
 		\hline
 	\end{tabular}
-	\label{table:loadingCamparison} % is used to refer this table in the text
 	\caption{Result of loading time after optimizing in Android} % title of Table
+	\label{table:loadingCamparison} % is used to refer this table in the text
 \end{table}
 
-From Table ~\ref{table:loadingCamparison} we can see that the cost of loading time is much smaller than that before optimization. Besides, the increase of the size of tree doesn't affect the length of loading time any more.
+
+From Table \ref{table:loadingCamparison} we can see that the cost of loading time is much smaller than that before optimization. Besides, the increase of the size of tree doesn't affect the length of loading time any more.
 
 \section{User Interaction}
 
@@ -752,15 +781,15 @@ When user drags or zooms on the view, the view listener would receive a set of d
 In order to reduce the response time, the extra finger move messages should be discarded. Another thread and message queue is used to solve this problem. When a user triggers a set of move actions, a set of recalculation messages will be sent from the main UI thread to the calculation thread. In the calculation thread, when it catches a recalculation message while there are other recalculation messages in the message queue, then the current recalculation message will be discarded. Otherwise, the recalculation method will be called. Hence, when there are several recalculation messages being sent, only the last one will be processed. When the recalculation is over, the calculation thread will send message to invalidate the view. 
 
  \begin{figure}[H]
- \begin{tikzpicture}[node distance = 4.7cm, auto]
+ \begin{tikzpicture}[node distance = 6cm, auto]
     % Place nodes
     \node [block] (view) {View};
-    \node [block, right of=view, node distance = 4.7cm] (operation) {Drag or Zoom};
+    \node [block, right of=view, node distance = 6cm] (operation) {Drag or Zoom};
     \node [block, below of=operation, node distance=3cm] (looper) {Looper};
     \node [block, below of=looper, node distance = 3cm] (handler) {Handler};
-    \node [block, right of=looper, node distance = 4.7cm] (catcher) {Catch next message};
+    \node [block, right of=looper, node distance = 6cm] (catcher) {Catch next message};
     \node [decision, below of=handler, node distance = 3.5cm] (decision) {The only recalc message?};
-    \node [block, left of=decision, node distance = 4.7cm] (recalculation) {Recalculation};
+    \node [block, left of=decision, node distance = 6cm] (recalculation) {Recalculation};
     %Draw edges
     \path [line] (view) -- (operation);
     \path [line] (operation) -- node[red] {Send Message} (looper);
@@ -786,9 +815,9 @@ This is one cycle of allocating new nodes during idle time. When the cycle ends,
  \begin{tikzpicture}[node distance = 5.5cm, auto]
     % Place nodes
     \node [block] (term1) {Delete nodes from running list};
-    \node [decision, right of=term1, node distance=4.7cm] (test) {Recalculation in Message Queue?};
+    \node [decision, right of=term1, node distance=6cm] (test) {Recalculation in Message Queue?};
     \node [decision, below of=test, node distance = 4cm] (test2) {Enough memory?};
-    \node [block, right of=test2, node distance = 4.7cm] (sort) {Sort non initialization list};
+    \node [block, right of=test2, node distance = 6cm] (sort) {Sort non initialization list};
     \node [block, above of=sort, node distance = 4cm] (build) {Initialize one node from non initialization list};    
     \node [block, above of=test, node distance = 4cm] (poss) {Calculate possibility};
     \node [block, above of=term1, node distance = 4cm] (recalc) {Recalculation Finish};
@@ -821,12 +850,12 @@ When the recalculation is done, it will send message to update the view. From a 
     % Place nodes
     \node [block] (view) {View};
     \node [block, right of=view, node distance = 4.5cm] (operation) {Drag or Zoom};
-    \node [block, right of=operation, node distance = 5.5cm] (update) {Update View};
+    \node [block, right of=operation, node distance = 6.5cm] (update) {Update View};
     \node [block, above of=update, node distance = 3cm] (recalculation) {Recalculation};
     \node [decision, below of=update, node distance = 4cm] (test) {Test whether should use bitmap};
-    \node [block, left of=test, node distance = 5.5cm] (bitmap) {Translate and Scale bitmap};
+    \node [block, left of=test, node distance = 6.5cm] (bitmap) {Translate and Scale bitmap};
     \node [block, below of=test] (redraw) {Draw Using Node Object};
-    \node [block, left of=redraw, node distance = 5.5cm] (store) {Cache New Bitmap};
+    \node [block, left of=redraw, node distance = 6.5cm] (store) {Cache New Bitmap};
 
    %Draw edges
     \path [line] (view) -- (operation);
@@ -858,9 +887,9 @@ There is one more thing needing to be tested for whether to use bitmap . When th
     \node [block] (test) {Test whether should use bitmap};
 	\node [decision, below of=test, node distance = 4cm](interaction){During interaction};
 	\node [decision, below of=interaction, node distance = 4cm](counter){Counter equals};
-	\node [block, right of=counter, node distance =4.7cm] (bitmap) {Drawing bitmap};
+	\node [block, right of=counter, node distance =6cm] (bitmap) {Drawing bitmap};
 	\node [decision, below of=bitmap, node distance = 4cm](recalculation){During recalculation};
-	\node [block, right of=recalculation, node distance = 4.7cm] (redrawn) {Drawing nodes};
+	\node [block, right of=recalculation, node distance = 6cm] (redrawn) {Drawing nodes};
     %Draw edges
      \path [line] (test) -- (interaction);
     \path [line] (interaction) -- node[red] {No} (counter);
@@ -871,14 +900,84 @@ There is one more thing needing to be tested for whether to use bitmap . When th
     \path [line] (recalculation) -- node[red] {No} (redrawn);
 
 \end{tikzpicture}
-\caption{How to test whether toWhen the amount of species on the tree When the amount of species on the tree  use bitmap to redraw}
+\caption{How to test whether to use bitmap to redraw}
+\end{figure}
+
+\subsection{Avoid duplicate drawing nodes}
+
+When the user moves his or her finger off the screen, the application would reset the duringInteraction flag so that the last time the view should draw nodes instead of draw elements. The application indeed draw nodes after user ends interaction. However, drawing nodes is triggered for several times instead of only once. This issue is caused by the invalidate message generated from the calculation thread. When user interaction ends, the application would reset duringInteraction flag and update itself. If another thread ends its calculation and sends message to invalidate the view at this time, then the view will get updated for two times both under the circumstance of duringInteraction flag being reset. Hence, it would result in extra drawing nodes. A work flow of how extra drawing is generated is shown below.
+
+\begin{figure}[H]
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block] (ends) {User interaction ends};
+	\node [block, below of=test, node distance = 4cm](reset){duringInteraction = false};
+	\node [block, below of=interaction, node distance = 4cm](redraw){Redraw};
+	\node [block, right of=ends, node distance =10cm] (end2) {Recalculation ends};
+	\node [block, below of=end2, node distance = 4cm](reset2){During recalculation =false};
+    %Draw edges
+     \path [line] (ends) -- (reset);
+    \path [line] (reset) -- (redraw);
+    \path [line] (end2) -- (reset2);
+	\draw [-] (8.3,-4) -- (5.8,-4);
+	\draw [-] (5.8,-4) -- (5.8,-2);
+	\draw [-]  (5.8,-4) -- (5.8,-6);
+	\draw [->] (5.8,-6) -- (0,-6) node[red,above,near start ] {Extra Drawing};
+	\draw [->] (5.8,-2) -- (0,-2) node[red, above, near start] {Extra Drawing};
+	\draw [-] (5.8, -6) -- (5.8, -10);
+	\draw [->] (0, -8.7) -- (0,-12);
+	\draw [->](5.8,-10) -- (0,-10) node[red, above, near start] {No Extra Drawing};
+\end{tikzpicture}
+\caption{Causes of extra drawing after user interaction}
+\end{figure}
+
+After users end interaction, only if the view updates itself with bitmap before the recalculation is done, there will be no extra drawing message. If the calculation thread ends calculating before the view updates, both the during recalculation thread and during interaction thread will be set false before invalidate message get executed. Hence, drawing nodes will be executed more than one time.
+
+The solution to the above issue is to set a flag when actual drawing is being executed. This flag will be reset when user interacts with the view. If the flag is set, then when the view gets updated, the view will use bitmap to draw, otherwise, it will test other conditions and possibly do actual drawing. Hence, after user interaction, the actual drawing could only be called once before next interaction.
+
+\begin{figure}[H]
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block] (ends) {User interaction ends};
+	\node [decision, right of=ends, node distance = 6cm](test){flag equals 1?};
+	\node [block, above of=test, node distance = 4cm](bitmap){Draw bitmap};
+	\node [block, below of=test, node distance =4cm] (nodes) {Draw nodes};
+	\node [block, below of=nodes, node distance = 4cm](set) {flag = 1};
+    %Draw edges
+     \path [line] (ends) -- (test);
+    \path [line] (test) -- node[red]{Yes} (bitmap);
+    \path [line] (test) -- node[red]{No}(nodes);
+    \path [line] (nodes) -- (set);
+	\draw [->] (12,0) -- (7.5,0) node[red,above, near start]{Invalidate Message};
+
+\end{tikzpicture}
+\caption{Solve extra drawing by setting a new flag}
 \end{figure}
 
 
-\subsection{Draw less detail first}
+\subsection{Draw less details first}
 
-In order to update the view by drawing nodes as soon as the user moves their fingers off the screen, the application would increase the threshold of displaying nodes when interaction begins. Therefore, less nodes would be added and drawn in the drawing list. It would shorten the time for recalculating as well as drawing. One second later the view is updated with high threshold, the view will send another recalculation message to another thread to calculate again with more details. If during this one second user interacts with the view, the result of this recalculation won't be drawn since the counter in view has been updated. If user has no interaction with the view, then after user could see the view being updated with more details. From a user perspective, he or she could get the view rapidly updated after their interaction with the view. Then one seconds later, more details would be drawn on the screen.
+In order to update the view by drawing nodes as soon as the user moves their fingers off the screen, the application would increase the threshold of displaying nodes when interaction begins. Therefore, less nodes would be added and drawn in the drawing list. It would shorten the time for recalculating as well as drawing. One second later the view is updated with low threshold, the view will send another recalculation message to another thread to calculate again with more details. If during this one second user interacts with the view, the result of this recalculation won't be drawn since the counter in view has been updated. If user has no interaction with the view, then after user could see the view being updated with more details. From a user perspective, he or she could get the view rapidly updated after their interaction with the view. Then one seconds later, more details would be drawn on the screen.
 
+\begin{figure}[H]
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block] (ends) {User interaction ends};
+	\node [block, below of=ends, node distance = 4cm](high){Set high threshold};
+	\node [block, below of=high, node distance = 4cm](recalc){Recalculation};
+	\node [decision, right of=ends, node distance = 11cm](test) {Is user interacting?};
+	\node [block, below of=test, node distance =4cm] (low) {Set low threshold};
+	\node [block, below of = recalc] (update) {Update view};
+    %Draw edges
+     \path [line] (ends) -- (high);
+    \path [line] (high) -- (recalc);
+    \path [line] (ends) -- node[red]{Send Message 1 second later}(test);
+    \path [line] (test) -- node[red]{No}(low);
+    \path [line] (recalc) -- (update);
+	\path [line] (low) |- (recalc);
+\end{tikzpicture}
+\caption{Draw less details when user interaction ends, draw more details one second later}
+\end{figure}
 
 \chapter{Conclusion and Future Work}
 

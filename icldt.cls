@@ -88,7 +88,7 @@
 \ProcessOptions\relax
 \LoadClass[pagesize=auto]{scrreprt}
 \RequirePackage{setspace}
-\RequirePackage[left=4.2cm,right=4.2cm,top=2.97cm,bottom=5.94cm]%
+\RequirePackage[left=2.5cm,right=2cm,top=2cm,bottom=2cm]%
  {geometry}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand*{\college}[1]{\gdef\@college{#1}}
@@ -125,7 +125,7 @@
  \end{center}\par
  \noindent\begin{minipage}[b]{\textwidth}
   \centering
-  Submitted in part fulfilment of the requirements for the degree of\\
+  Submitted in partial fulfilment of the requirements for the MSc Degree in\\
   \@degree\ in \ifx\empty\@field{\@department}\else{\@field}\fi\ of
   \ifx\empty\@university{\@college}\else{the \@university}\fi
   \ifx\@diploma\@empty\else{\\and the \@diploma}\fi
